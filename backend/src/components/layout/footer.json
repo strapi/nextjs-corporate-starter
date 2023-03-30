@@ -26,10 +26,10 @@
       "repeatable": true,
       "component": "links.social-link"
     },
-    "categoryLinks": {
-      "type": "component",
-      "repeatable": false,
-      "component": "elements.categories"
+    "categories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::category.category"
     }
   }
 }
