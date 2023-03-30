@@ -24,7 +24,7 @@ async function getGlobal(): Promise<any> {
       "footer.menuLinks",
       "footer.legalLinks",
       "footer.socialLinks",
-      "footer.categoryLinks.categories",
+      "footer.categories"
     ],
   };
   
@@ -81,7 +81,7 @@ export default async function RootLayout({
           logoUrl={footerLogoUrl}
           logoText={footer.footerLogo.logoText}
           menuLinks={footer.menuLinks}
-          categoryLinks={footer.categoryLinks.categories.data}
+          categoryLinks={footer.categories.data}
           legalLinks={footer.legalLinks}
           socialLinks={footer.socialLinks}
         />
