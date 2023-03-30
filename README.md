@@ -57,8 +57,3 @@ In the root of our project we have our `seed-data.tar.gz` file.  We will use it 
 
 This will import your data locally.  Log into your admin panel to see the newly imported data.
 
-
-https://snugly-right-limit.strapiapp.com/admin
-
-834a6f00ef26a015e0707693bfc5ee52620984e7d963d93dca85d523c3117b441e96e3efd17d0fcdc881eb6464c663f4380d5243f0f71a51b8d8e2499a877f0f205c006efe7924e2b5b3d1afae6eb5c5ae6de74557d1e40ff9e72e5d4d4fafddadcb9c42972a7e405036e660aa978a8f8c8c9d41ed55f314d7b8964a800ddadd
-# nextjs-corporate-starter
