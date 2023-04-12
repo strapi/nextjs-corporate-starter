@@ -7,9 +7,9 @@ note: This project was started with love by Trecia, Daniel and Paul.  We were al
 1. Clone the repository locally:
 
 ``` bash
-  git clone https://github.com/PaulBratslavsky/strapi-next-starter-dev.git 
+  git clone https://github.com/strapi/nextjs-corporate-starter.git
     or
-  gh repo clone PaulBratslavsky/strapi-next-starter-dev
+  gh repo clone strapi/nextjs-corporate-starter
 ```
 
 2. CD into `backend` directory and run the following command to install all the dependencies:
