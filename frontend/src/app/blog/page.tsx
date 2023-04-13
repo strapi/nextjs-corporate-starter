@@ -66,7 +66,6 @@ export default function Profile() {
 
   if (isLoading) return <Loader />;
 
-  console.log(JSON.stringify(data[0]));
   return (
     <div>
       <PageHeader heading="Our Blog" text="Checkout Something Cool" />
