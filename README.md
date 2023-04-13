@@ -2,7 +2,7 @@
 
 note: This project was started with love by Trecia, Daniel and Paul. We were all new to Next 13 and Typescript. If you find any bugs or improvements feel free to create an issue. Thank you all for your support and participation.
 
-![](./readme-images/demo-site.gif)
+![demo-site](https://user-images.githubusercontent.com/6153188/231865321-0da5e81f-4832-4cce-bcd1-ecd79e9b9cc3.gif)
 
 ## Getting Started
 
@@ -41,7 +41,7 @@ TRANSFER_TOKEN_SALT=tobemodified
 
 You will be prompted to create your first admin user.
 
-![Admin User](./readme-images/admin-user.gif)
+![admin-user](https://user-images.githubusercontent.com/6153188/231865420-5f03a90f-b893-4057-9634-9632920a7d97.gif)
 
 Great. You now have your project running. Let's add some data.
 
@@ -61,7 +61,7 @@ In the root of our project we have our `seed-data.tar.gz` file. We will use it t
   yarn strapi import -f ../seed-data.tar.gz
 ```
 
-![After Data Import](./readme-images/after-import.gif)
+![after-import](https://user-images.githubusercontent.com/6153188/231865491-05cb5818-a0d0-49ce-807e-a879f7e3070c.gif)
 
 This will import your data locally. Log back into your admin panel to see the newly imported data.
 
@@ -82,7 +82,7 @@ Before starting our Next JS app we need to go inside our Strapi Admin and create
 
 Inside your Strapi Admin Panel navigate to Settings -> API Tokens and click on the `Create new API Token`.
 
-![API Tokens](./readme-images/api-tokens.png)
+![api-tokens](https://user-images.githubusercontent.com/6153188/231865572-cebc5538-374c-4050-91cd-c303fae25a3d.png)
 
 Here are our Token Settings
 
@@ -102,7 +102,7 @@ In Permissions lets give the following access.
 | Page | find and findOne |
 | Product-feature | find and findOne |
 
-![Api Token Settings](./readme-images/permissions.gif)
+![permissions](https://user-images.githubusercontent.com/6153188/231865625-a3634d89-0f40-4a6d-a356-8f654abd88b9.gif)
 
 Once you have your token add it to your `NEXT_PUBLIC_STRAPI_API_TOKEN` variable name in the `.env` file.
 
@@ -125,7 +125,7 @@ Once your environment variables are set you can start your frontend application 
 
 You should now see your Next JS frontend.
 
-![Frontend](./readme-images/frontend.png)
+![frontend](https://user-images.githubusercontent.com/6153188/231865662-d870051f-4503-4a01-bc6b-635c7c5ca40d.png)
 
 ## Start Both Projects Concurrently
 
