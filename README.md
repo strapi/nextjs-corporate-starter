@@ -20,7 +20,7 @@ note: This project was started with love by Trecia, Daniel and Paul.  We were al
 
 3. Next Set up your `.env` file.  You can use use the `.env.example` file as reference:
 ``` bash
-HOST=0.0.0.0
+HOST=localhost
 PORT=1337
 APP_KEYS="toBeModified1,toBeModified2"
 API_TOKEN_SALT=tobemodified
