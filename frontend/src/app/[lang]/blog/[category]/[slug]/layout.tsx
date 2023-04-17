@@ -38,6 +38,9 @@ interface Category {
     attributes: {
         name: string;
         slug: string;
+        articles: {
+            data: Array<{}>;
+        };
     };
 }
 
