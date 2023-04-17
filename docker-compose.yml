@@ -1,0 +1,64 @@
+---
+version: '3'
+services:
+
+  frontend:
+    container_name: strapi-frontend
+    build: frontend
+    restart: unless-stopped
+    environment:
+      NODE_ENV: docker-compose
+      NEXT_PUBLIC_STRAPI_URL: http://localhost:1337
+      NEXT_PUBLIC_STRAPI_API_TOKEN: tobemodified
+      NEXT_PUBLIC_STRAPI_FORM_SUBMISSION_TOKEN: tobemodified
+      NEXT_PUBLIC_PAGE_LIMIT: 6
+
+  backend:
+    container_name: strapi-backend
+    build: backend
+    restart: unless-stopped
+    environment:
+      NODE_ENV: docker-compose
+      DATABASE_CLIENT: mysql
+      DATABASE_HOST: mysql
+      DATABASE_PORT: 3306
+      DATABASE_NAME: strapi
+      DATABASE_USERNAME: user
+      DATABASE_PASSWORD: password
+      APP_KEYS: "toBeModified1,toBeModified2"
+      API_TOKEN_SALT: tobemodified
+      ADMIN_JWT_SECRET: tobemodified
+      JWT_SECRET: tobemodified
+      TRANSFER_TOKEN_SALT: tobemodified
+    ports:
+      - '1337:1337'
+    networks:
+      - strapi
+    depends_on:
+      - mysql
+
+  mysql:
+    container_name: mysql
+    platform: linux/amd64 #for platform error on Apple M1 chips
+    restart: unless-stopped
+    image: mysql:5.7
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_USER: user
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_PASSWORD: admin
+      MYSQL_DATABASE: strapi
+    volumes:
+      - strapi-data:/var/lib/mysql
+    ports:
+      - '3306:3306'
+    networks:
+      - strapi
+
+volumes:
+  strapi-data:
+
+networks:
+  strapi:
+    name: Strapi
+    driver: bridge
