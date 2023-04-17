@@ -1,9 +1,8 @@
-'use strict';
+"use strict";
 
 /**
  * `page-populate-middleware` middleware
  */
-
 
 const populate = {
   contentSections: {
@@ -16,35 +15,16 @@ const populate = {
       },
       feature: {
         populate: {
-          fields: [
-            "title",
-            "description",
-            "showLink",
-            "newTab",
-            "url",
-            "text",
-          ],
+          fields: ["title", "description", "showLink", "newTab", "url", "text"],
           media: {
-            fields: [
-              "url",
-              "alternativeText",
-              "caption",
-              "width",
-              "height",
-            ],
+            fields: ["url", "alternativeText", "caption", "width", "height"],
           },
         },
       },
       testimonials: {
         populate: {
           picture: {
-            fields: [
-              "url",
-              "alternativeText",
-              "caption",
-              "width",
-              "height",
-            ],
+            fields: ["url", "alternativeText", "caption", "width", "height"],
           },
         },
       },
@@ -64,9 +44,10 @@ module.exports = (config, { strapi }) => {
     ctx.query = {
       populate,
       filters: { slug: ctx.query.filters.slug },
+      locale: ctx.query.locale,
     };
 
-    console.log("page-populate-middleware.js: ctx.query = ", ctx.query)
+    console.log("page-populate-middleware.js: ctx.query = ", ctx.query);
 
     await next();
   };
