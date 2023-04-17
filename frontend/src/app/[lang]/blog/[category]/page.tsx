@@ -47,3 +47,7 @@ export default async function CategoryRoute({ params }: { params: { category: st
         </div>
     );
 }
+
+export async function generateStaticParams() {
+    return [];
+}
