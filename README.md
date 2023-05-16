@@ -72,10 +72,10 @@ CD into your `frontend` directory and run the `yarn` to instal all of your depen
 Next we need to create our `.env` file and paste in the following.
 
 ```bash
-NEXT_PUBLIC_STRAPI_API_TOKEN=tobemodified
-NEXT_PUBLIC_STRAPI_FORM_SUBMISSION_TOKEN=tobemodified
-NEXT_PUBLIC_STRAPI_URL=http://localhost:1337
-NEXT_PUBLIC_PAGE_LIMIT=6
+NEXT_STRAPI_API_TOKEN=tobemodified
+NEXT_STRAPI_FORM_SUBMISSION_TOKEN=tobemodified
+NEXT_STRAPI_URL=http://localhost:1337
+NEXT_PAGE_LIMIT=6
 ```
 
 Before starting our Next JS app we need to go inside our Strapi Admin and create two tokens that we will be using for **form submission** and displaying our **content**.
@@ -104,7 +104,7 @@ In Permissions lets give the following access.
 
 ![permissions](https://user-images.githubusercontent.com/6153188/231865625-a3634d89-0f40-4a6d-a356-8f654abd88b9.gif)
 
-Once you have your token add it to your `NEXT_PUBLIC_STRAPI_API_TOKEN` variable name in the `.env` file.
+Once you have your token add it to your `NEXT_STRAPI_API_TOKEN` variable name in the `.env` file.
 
 Also create a token that will allow us to submit our form. 
 
@@ -119,7 +119,7 @@ In Permissions lets give the following access.
 |----------|:-------------:|
 | Lead-Form-Submission | create |
 
-Add your token to your `NEXT_PUBLIC_STRAPI_FORM_SUBMISSION_TOKEN` variable name in the `.env` file.
+Add your token to your `NEXT_STRAPI_FORM_SUBMISSION_TOKEN` variable name in the `.env` file.
 
 Once your environment variables are set you can start your frontend application by running `yarn dev`.
 
