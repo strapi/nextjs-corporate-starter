@@ -2,7 +2,7 @@ import { fetchAPI } from './utils/fetch-api';
 import { sectionRenderer } from './utils/section-renderer';
 
 async function getPageBySlug(slug: string, lang: string) {
-    const token = process.env.NEXT_PUBLIC_STRAPI_API_TOKEN;
+    const token = process.env.NEXT_STRAPI_API_TOKEN;
 
     const path = `/pages`;
     const urlParamsObject = { filters: { slug }, locale: lang };

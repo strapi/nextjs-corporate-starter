@@ -23,6 +23,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/components/LoadMorePosts.tsx", "src/app/blog-3/page.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/components/LoadMorePosts.tsx", "src/app/blog-3/page.tsx", "src/app/[lang]/components/ErrorBoundry.jsx", "src/app/[lang]/components/ErrorBoundary.tsx", "src/app/global-error.tsx"],
   "exclude": ["node_modules"]
 }
