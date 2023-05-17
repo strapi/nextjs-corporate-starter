@@ -22,7 +22,7 @@ export default function Profile() {
   const fetchData = useCallback(async (start: number, limit: number) => {
     setLoading(true);
     try {
-      const token = process.env.NEXT_STRAPI_API_TOKEN;
+      const token = process.env.NEXT_PUBLIC_STRAPI_API_TOKEN;
       const path = `/articles`;
       const urlParamsObject = {
         sort: { createdAt: "desc" },
@@ -57,11 +57,11 @@ export default function Profile() {
 
   function loadMorePosts(): void {
     const nextPosts = meta!.pagination.start + meta!.pagination.limit;
-    fetchData(nextPosts, Number(process.env.NEXT_PAGE_LIMIT));
+    fetchData(nextPosts, Number(process.env.NEXT_PUBLIC_PAGE_LIMIT));
   }
 
   useEffect(() => {
-    fetchData(0, Number(process.env.NEXT_PAGE_LIMIT));
+    fetchData(0, Number(process.env.NEXT_PUBLIC_PAGE_LIMIT));
   }, [fetchData]);
 
   if (isLoading) return <Loader />;

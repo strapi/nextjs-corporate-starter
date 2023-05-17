@@ -3,7 +3,7 @@ import Post from '@/app/[lang]/views/post';
 import type { Metadata } from 'next';
 
 async function getPostBySlug(slug: string) {
-    const token = process.env.NEXT_STRAPI_API_TOKEN;
+    const token = process.env.NEXT_PUBLIC_STRAPI_API_TOKEN;
     const path = `/articles`;
     const urlParamsObject = {
         filters: { slug },
@@ -20,7 +20,7 @@ async function getPostBySlug(slug: string) {
 }
 
 async function getMetaData(slug: string) {
-    const token = process.env.NEXT_STRAPI_API_TOKEN;
+    const token = process.env.NEXT_PUBLIC_STRAPI_API_TOKEN;
     const path = `/articles`;
     const urlParamsObject = {
         filters: { slug },
@@ -49,7 +49,7 @@ export default async function PostRoute({ params }: { params: { slug: string } }
 }
 
 export async function generateStaticParams() {
-    const token = process.env.NEXT_STRAPI_API_TOKEN;
+    const token = process.env.NEXT_PUBLIC_STRAPI_API_TOKEN;
     const path = `/articles`;
     const options = { headers: { Authorization: `Bearer ${token}` } };
     const articleResponse = await fetchAPI(

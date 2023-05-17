@@ -4,7 +4,7 @@ import BlogList from '@/app/[lang]/views/blog-list';
 
 async function fetchPostsByCategory(filter: string) {
     try {
-        const token = process.env.NEXT_STRAPI_API_TOKEN;
+        const token = process.env.NEXT_PUBLIC_STRAPI_API_TOKEN;
         const path = `/articles`;
         const urlParamsObject = {
             sort: { createdAt: 'desc' },

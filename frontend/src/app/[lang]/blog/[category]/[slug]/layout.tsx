@@ -5,7 +5,7 @@ import { fetchAPI } from "@/app/[lang]/utils/fetch-api";
 
 async function fetchSideMenuData(filter: string) {
   try {
-    const token = process.env.NEXT_STRAPI_API_TOKEN;
+    const token = process.env.NEXT_PUBLIC_STRAPI_API_TOKEN;
     const options = { headers: { Authorization: `Bearer ${token}` } };
 
     const categoriesResponse = await fetchAPI(
@@ -91,7 +91,7 @@ export default async function LayoutRoute({
 }
 
 export async function generateStaticParams() {
-  const token = process.env.NEXT_STRAPI_API_TOKEN;
+  const token = process.env.NEXT_PUBLIC_STRAPI_API_TOKEN;
   const path = `/articles`;
   const options = { headers: { Authorization: `Bearer ${token}` } };
   const articleResponse = await fetchAPI(

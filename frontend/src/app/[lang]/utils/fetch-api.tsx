@@ -9,6 +9,7 @@ export async function fetchAPI(
   try {
     // Merge default and user options
     const mergedOptions = {
+      next: { revalidate: 60 },
       headers: {
         "Content-Type": "application/json",
       },
@@ -23,14 +24,9 @@ export async function fetchAPI(
 
     // Trigger API call
     const response = await fetch(requestUrl, mergedOptions);
-
-    // Handle response
-    if (!response.ok) {
-      console.error(response.statusText);
-      throw new Error(`An error occurred please try again`);
-    }
     const data = await response.json();
     return data;
+    
   } catch (error) {
     console.error(error);
     throw new Error(`Please check if your server is running and you set all the required tokens.`);

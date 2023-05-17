@@ -8,8 +8,14 @@ import Banner from "./components/Banner";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 
+const FALLBACK_SEO = {
+  title: "Strapi Starter Next Blog",
+  description: "Strapi Starter Next Blog",
+}
+
+
 async function getGlobal(): Promise<any> {
-  const token = process.env.NEXT_STRAPI_API_TOKEN;
+  const token = process.env.NEXT_PUBLIC_STRAPI_API_TOKEN;
 
   if (!token) throw new Error("The Strapi API Token environment variable is not set.");
 
@@ -38,7 +44,7 @@ async function getGlobal(): Promise<any> {
 export async function generateMetadata(): Promise<Metadata> {
   const meta = await getGlobal();
 
-  if (!meta) throw new Error("No metadata found");
+  if (!meta.data) return FALLBACK_SEO;
 
   const { metadata, favicon } = meta.data.attributes;
   const { url } = favicon.data.attributes;
@@ -60,6 +66,9 @@ export default async function RootLayout({
   params: { lang: string };
 }) {
   const global = await getGlobal();
+  // TODO: CREATE A CUSTOM ERROR PAGE
+  if (!global.data) return null;
+  
   const { notificationBanner, navbar, footer } = global.data.attributes;
 
   const navbarLogoUrl = getStrapiMedia(
