@@ -111,7 +111,8 @@ In this particular project this is not an issue.  Although the above is the reco
 
 When creating a Token, just select the `Read-only` option from token type drop down.
 
-insert image
+<img width="1093" alt="create-read-only-token" src="https://github.com/strapi/nextjs-corporate-starter/assets/6153188/3ea6c029-b296-4bbc-a5ce-33eedac52a03">
+
 
 Next create a token that will allow us to submit our form.
 
