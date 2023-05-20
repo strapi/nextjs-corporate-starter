@@ -105,7 +105,15 @@ In Permissions lets give the following access.
 
 Once you have your token add it to your `NEXT_STRAPI_API_TOKEN` variable name in the `.env` file.
 
-Also create a token that will allow us to submit our form.
+**Alternatively:** you can create a READ only Token that will give READ permission to all your endpoints.  
+
+In this particular project this is not an issue.  Although the above is the recommended way, just wanted to show you this option here as well.
+
+When creating a Token, just select the `Read-only` option from token type drop down.
+
+insert image
+
+Next create a token that will allow us to submit our form.
 
 Name: Public API Form Submit
 Description: Form Submission.
