@@ -1,10 +1,12 @@
-{ 
+{
   "scripts": {
-  
     "frontend": "yarn dev --prefix ../frontend/",
     "backend": "yarn dev --prefix ../backend/",
-    "clear": "cd frontend/.next && rm -rf cache",
-    "dev": "concurrently \"yarn clear\" \"cd frontend && yarn dev\" \"cd backend && yarn develop\""
+    "clear": "cd frontend && rm -rf .next && rm -rf cache",
+    "init:frontend": "cd frontend && yarn",
+    "init:backend": "cd backend && yarn",
+    "setup": "yarn install && yarn init:frontend && yarn init:backend",
+    "dev": "yarn clear && concurrently \"cd frontend && yarn dev\" \"cd backend && yarn develop\""
   },
   "dependencies": {
     "concurrently": "^7.6.0"
