@@ -14,15 +14,15 @@ note: This project was started with love by [Trecia](https://github.com/TreciaKS
   gh repo clone strapi/nextjs-corporate-starter
 ```
 
-2. CD into `backend` directory and run the following command to install all the dependencies:
+2. Run `setup` command to setup frontend and backend dependencies:
 
 ```bash
-  yarn
+  yarn setup
 ```
 
 3. Next Set up your `.env` file. You can use use the `.env.example` file as reference:
 
-``` bash
+```bash
 HOST=localhost
 PORT=1337
 APP_KEYS="toBeModified1,toBeModified2"
@@ -67,8 +67,6 @@ This will import your data locally. Log back into your admin panel to see the ne
 
 ## Setting Up The Frontend
 
-CD into your `frontend` directory and run the `yarn` to instal all of your dependencies.
-
 Next we need to create our `.env` file and paste in the following.
 
 ```bash
@@ -94,20 +92,20 @@ Token type: Custom
 
 In Permissions lets give the following access.
 
-| Content  | Permissions   
-|----------|:-------------:|
-| Article | find and findOne |
-| Author | find and findOne |
-| Category | find and findOne |
-| Global | find |
-| Page | find and findOne |
+| Content         |   Permissions    |
+| --------------- | :--------------: |
+| Article         | find and findOne |
+| Author          | find and findOne |
+| Category        | find and findOne |
+| Global          |       find       |
+| Page            | find and findOne |
 | Product-feature | find and findOne |
 
 ![permissions](https://user-images.githubusercontent.com/6153188/231865625-a3634d89-0f40-4a6d-a356-8f654abd88b9.gif)
 
 Once you have your token add it to your `NEXT_STRAPI_API_TOKEN` variable name in the `.env` file.
 
-Also create a token that will allow us to submit our form. 
+Also create a token that will allow us to submit our form.
 
 Name: Public API Form Submit
 Description: Form Submission.
@@ -116,9 +114,9 @@ Token type: Custom
 
 In Permissions lets give the following access.
 
-| Content  | Permissions   
-|----------|:-------------:|
-| Lead-Form-Submission | create |
+| Content              | Permissions |
+| -------------------- | :---------: |
+| Lead-Form-Submission |   create    |
 
 Add your token to your `NEXT_STRAPI_FORM_SUBMISSION_TOKEN` variable name in the `.env` file.
 
@@ -134,31 +132,31 @@ We can also start both projects with one command using the `concurrently` packag
 
 You can find the setting inside the `package.json` file inside the root folder.
 
-``` json
-{ 
+```json
+{
   "scripts": {
-  
     "frontend": "yarn dev --prefix ../frontend/",
     "backend": "yarn dev --prefix ../backend/",
-    "clear": "cd frontend/.next && rm -rf cache",
-    "dev": "concurrently \"yarn clear\" \"cd frontend && yarn dev\" \"cd backend && yarn develop\""
+    "clear": "cd frontend && rm -rf .next && rm -rf cache",
+    "init:frontend": "cd frontend && yarn",
+    "init:backend": "cd backend && yarn",
+    "setup": "yarn install && yarn init:frontend && yarn init:backend",
+    "dev": "yarn clear && concurrently \"cd frontend && yarn dev\" \"cd backend && yarn develop\""
   },
   "dependencies": {
     "concurrently": "^7.6.0"
   }
 }
-
 ```
-Inside your root folder run `yarn` to install the dependencies and you can start both apps by running `yarn dev`.
+
+You can start both apps by running `yarn dev`.
 
 ## Conclusion
 
-Hope you find this starter useful, it is a bare-bone example to help you get started quickly.  
+Hope you find this starter useful, it is a bare-bone example to help you get started quickly.
 
 Would love to hear what you will build using it.
 
 If you find bugs or have suggestions feel free to create issues.
 
 Thank you and stay awesome.
-
-
