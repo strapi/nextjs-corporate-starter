@@ -50,7 +50,6 @@ I will give you a quick overview of the process just in case this is something y
 Navigate to your `backend/package.json` file.
 
 ``` json
-//
  "dependencies": {
     "@strapi/plugin-i18n": "4.9.2",
     "@strapi/plugin-seo": "^1.8.0",
@@ -58,13 +57,11 @@ Navigate to your `backend/package.json` file.
     "@strapi/strapi": "4.9.2",
     "better-sqlite3": "7.4.6"
   },
-  //
 ```
 
 You can see my current project dependencies. I am going to replace my Strapi version from `4.9.2` to `4.10.5`
 
 ``` json
-//
  "dependencies": {
     "@strapi/plugin-i18n": "4.10.5",
     "@strapi/plugin-seo": "^1.8.0",
@@ -72,7 +69,6 @@ You can see my current project dependencies. I am going to replace my Strapi ver
     "@strapi/strapi": "4.10.5",
     "better-sqlite3": "7.4.6"
   },
-  //
 ```
 **note:** if you are using additional external packages or plugins, check and update accordingly.
 
@@ -194,11 +190,6 @@ Starting transfer...
 
 ```
 
-674061473dddced5377ed6873c470371edb0dfbdd7f23772f1d7762384524afd961b9089c4f6f8dc582abf14504370dfae184cdf8c99615f0d36fe829cfb72ad92541baa0e3ff72c65f2daa719c60f9a3d4f5b5d6acd33f199f5ccaf47441243a49735146a87542b8e7e3254003760205ad56f1f7a121dd78579b3d88218def2
-
-
-
 ``` bash
-yarn strapi transfer --to https://eloquent-amusement-f1ec474780.strapiapp.com/admin --to-token 674061473dddced5377ed6873c470371edb0dfbdd7f23772f1d7762384524afd961b9089c4f6f8dc582abf14504370dfae184cdf8c99615f0d36fe829cfb72ad92541baa0e3ff72c65f2daa719c60f9a3d4f5b5d6acd33f199f5ccaf47441243a49735146a87542b8e7e3254003760205ad56f1f7a121dd78579b3d88218def2 --exclude=files --force
-
+yarn strapi transfer --to https://eloquent-amusement-f1ec474780.strapiapp.com/admin --to-token <your token> --exclude=files --force
 ```
