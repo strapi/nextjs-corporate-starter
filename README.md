@@ -65,6 +65,10 @@ In the root of our project we have our `seed-data.tar.gz` file. We will use it t
 
 This will import your data locally. Log back into your admin panel to see the newly imported data.
 
+Here is a brief video covering initial setup and data seedign. 
+
+https://github.com/strapi/nextjs-corporate-starter/assets/6153188/80f00bf5-d17b-449d-8a0d-7f0d9614f40b
+
 ## Setting Up The Frontend
 
 Next we need to create our `.env` file and paste in the following.
