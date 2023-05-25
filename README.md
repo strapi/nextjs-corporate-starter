@@ -289,7 +289,7 @@ Remember, everyone was new to open-source at some point. If you're unsure about 
 
 ### Psst...
 
-If you are contributing often - we have a script in `package.json` that brings your branch up to speed with the upstream branch, just run:
+If you are contributing often - we have a script in `package.json` that brings your branch up to speed with the upstream (original) branch, just run:
 
 ```bash
 yarn repo:upstream
