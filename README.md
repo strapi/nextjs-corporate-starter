@@ -20,7 +20,7 @@ note: This project was started with love by [Trecia](https://github.com/TreciaKS
   yarn setup
 ```
 
-3. Next Set up your `.env` file. You can use use the `.env.example` file as reference:
+3. Next set up your `.env` file. You can use the `.env.example` file as reference:
 
 ```bash
 HOST=localhost
@@ -65,7 +65,7 @@ In the root of our project we have our `seed-data.tar.gz` file. We will use it t
 
 This will import your data locally. Log back into your admin panel to see the newly imported data.
 
-Here is a quick video covering initial setup and data seeding. 
+Here is a quick video covering initial setup and data seeding.
 
 https://github.com/strapi/nextjs-corporate-starter/assets/6153188/80f00bf5-d17b-449d-8a0d-7f0d9614f40b
 
@@ -109,14 +109,13 @@ In Permissions lets give the following access.
 
 Once you have your token add it to your `NEXT_STRAPI_API_TOKEN` variable name in the `.env` file.
 
-**Alternatively:** you can create a READ only Token that will give READ permission to all your endpoints.  
+**Alternatively:** you can create a READ only Token that will give READ permission to all your endpoints.
 
-In this particular project this is not an issue.  Although the above is the recommended way, just wanted to show you this option here as well.
+In this particular project this is not an issue. Although the above is the recommended way, just wanted to show you this option here as well.
 
 When creating a Token, just select the `Read-only` option from token type drop down.
 
 <img width="1093" alt="create-read-only-token" src="https://github.com/strapi/nextjs-corporate-starter/assets/6153188/3ea6c029-b296-4bbc-a5ce-33eedac52a03">
-
 
 Next create a token that will allow us to submit our form.
 
@@ -151,9 +150,9 @@ You can find the setting inside the `package.json` file inside the root folder.
     "frontend": "yarn dev --prefix ../frontend/",
     "backend": "yarn dev --prefix ../backend/",
     "clear": "cd frontend && rm -rf .next && rm -rf cache",
-    "init:frontend": "cd frontend && yarn",
-    "init:backend": "cd backend && yarn",
-    "setup": "yarn install && yarn init:frontend && yarn init:backend",
+    "setup:frontend": "cd frontend && yarn",
+    "setup:backend": "cd backend && yarn",
+    "setup": "yarn install && yarn setup:frontend && yarn setup:backend",
     "dev": "yarn clear && concurrently \"cd frontend && yarn dev\" \"cd backend && yarn develop\""
   },
   "dependencies": {
