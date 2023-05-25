@@ -49,7 +49,7 @@ Great. You now have your project running. Let's add some data.
 
 We are going to use our DEITS feature which will alow to easily import data into your project.
 
-You can learn more about it in our documentation. <-- need link to docs -->
+You can learn more about it in our documentation. ![Docs Import/Export](https://docs.strapi.io/dev-docs/data-management)
 
 In the root of our project we have our `seed-data.tar.gz` file. We will use it to seed our data.
 
