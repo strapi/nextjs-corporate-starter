@@ -49,7 +49,7 @@ Great. You now have your project running. Let's add some data.
 
 We are going to use our DEITS feature which will alow to easily import data into your project.
 
-You can learn more about it in our documentation. <-- need link to docs -->
+You can learn more about it in our documentation [here](https://docs.strapi.io/dev-docs/data-management).
 
 In the root of our project we have our `seed-data.tar.gz` file. We will use it to seed our data.
 
@@ -294,3 +294,9 @@ If you find yourself contributing frequently, we've provided a script in the pac
 ```bash
 yarn repo:upstream
 ```
+
+## FAQ
+
+### How do I add additional pages?
+
+Check out [this video](https://youtu.be/EoVrTNA3geM) where I will guide on how to do this. 
