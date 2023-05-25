@@ -71,7 +71,7 @@ https://github.com/strapi/nextjs-corporate-starter/assets/6153188/80f00bf5-d17b-
 
 ## Setting Up The Frontend
 
-Next we need to switch to our `/frontend` folder and create our `.env` file and paste in the following. 
+Next we need to switch to our `/frontend` directory and create our `.env` file and paste in the following. 
 
 ```bash
 NEXT_PUBLIC_STRAPI_API_TOKEN=your-api-token
