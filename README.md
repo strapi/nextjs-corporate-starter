@@ -32,7 +32,7 @@ JWT_SECRET=tobemodified
 TRANSFER_TOKEN_SALT=tobemodified
 ```
 
-4. Start Your Project by running the following command:
+4. Start your project by running the following command:
 
 ```bash
   yarn build
