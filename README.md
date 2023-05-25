@@ -20,7 +20,7 @@ note: This project was started with love by [Trecia](https://github.com/TreciaKS
   yarn setup
 ```
 
-3. Next set up your `.env` file. You can use the `.env.example` file as reference:
+3. Next, navigate to your `/backend` directory and set up your `.env` file. You can use the `.env.example` file as reference:
 
 ```bash
 HOST=localhost
@@ -71,7 +71,7 @@ https://github.com/strapi/nextjs-corporate-starter/assets/6153188/80f00bf5-d17b-
 
 ## Setting Up The Frontend
 
-Next we need to create our `.env` file and paste in the following.
+Next we need to switch to our `/frontend` folder and create our `.env` file and paste in the following. 
 
 ```bash
 NEXT_PUBLIC_STRAPI_API_TOKEN=your-api-token
@@ -107,7 +107,7 @@ In Permissions lets give the following access.
 
 ![permissions](https://user-images.githubusercontent.com/6153188/231865625-a3634d89-0f40-4a6d-a356-8f654abd88b9.gif)
 
-Once you have your token add it to your `NEXT_STRAPI_API_TOKEN` variable name in the `.env` file.
+Once you have your token add it to your `NEXT_PUBLIC_STRAPI_API_TOKEN` variable name in the `.env` file.
 
 **Alternatively:** you can create a READ only Token that will give READ permission to all your endpoints.
 
