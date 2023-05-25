@@ -172,3 +172,9 @@ Would love to hear what you will build using it.
 If you find bugs or have suggestions feel free to create issues.
 
 Thank you and stay awesome.
+
+## FAQ
+
+### How do I add additional pages?
+
+Check out [this video](https://youtu.be/EoVrTNA3geM) where I will guide on how to do this. 
