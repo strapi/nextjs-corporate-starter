@@ -289,7 +289,7 @@ Remember, everyone was new to open-source at some point. If you're unsure about 
 
 ### Psst...
 
-If you are contributing often - we have a script in `package.json` that brings your local project up to speed with the upstream (original) project main branch, just run:
+If you find yourself contributing frequently, we've provided a script in the package.json to help keep your local project synchronized with the main branch of the upstream (original) project. Simply execute the following command:
 
 ```bash
 yarn repo:upstream
