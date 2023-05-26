@@ -12,7 +12,7 @@ export default function FormSubmit({
   const [email, setEmail] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
-  const token = process.env.NEXT_STRAPI_FORM_SUBMISSION_TOKEN;
+  const token = process.env.NEXT_PUBLIC_STRAPI_FORM_SUBMISSION_TOKEN;
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -26,7 +26,7 @@ export default function FormSubmit({
       setErrorMessage("Invalid email format.");
       return;
     }
-
+    console.log(process.env);
     const res = await fetch(getStrapiURL() + "/api/lead-form-submissions", {
       method: "POST",
       headers: {
