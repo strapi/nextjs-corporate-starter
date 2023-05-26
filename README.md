@@ -76,7 +76,7 @@ Next we need to switch to our `/frontend` directory and create our `.env` file a
 ```bash
 NEXT_PUBLIC_STRAPI_API_TOKEN=your-api-token
 NEXT_PUBLIC_PAGE_LIMIT=6
-NEXT_STRAPI_FORM_SUBMISSION_TOKEN=your-form-submission-token
+NEXT_PUBLIC_STRAPI_FORM_SUBMISSION_TOKEN=your-form-submission-token
 NEXT_STRAPI_API_URL=http://localhost:1337
 
 ```
@@ -130,7 +130,7 @@ In Permissions lets give the following access.
 | -------------------- | :---------: |
 | Lead-Form-Submission |   create    |
 
-Add your token to your `NEXT_STRAPI_FORM_SUBMISSION_TOKEN` variable name in the `.env` file.
+Add your token to your `NEXT_PUBLIC_STRAPI_FORM_SUBMISSION_TOKEN` variable name in the `.env` file.
 
 Once your environment variables are set you can start your frontend application by running `yarn dev`.
 
