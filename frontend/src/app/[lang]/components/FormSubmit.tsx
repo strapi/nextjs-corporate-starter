@@ -26,7 +26,7 @@ export default function FormSubmit({
       setErrorMessage("Invalid email format.");
       return;
     }
-    console.log(process.env);
+
     const res = await fetch(getStrapiURL() + "/api/lead-form-submissions", {
       method: "POST",
       headers: {
