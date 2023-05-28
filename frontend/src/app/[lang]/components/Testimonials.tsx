@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { getStrapiURL } from "../utils/api-helpers";
+import { getStrapiMedia } from "../utils/api-helpers";
 
 interface Testimonial {
   text: string;
@@ -26,7 +26,7 @@ interface TestimonialsProps {
 }
 
 function Testimonial({ text, authorName, picture }: Testimonial) {
-  const imageUrl = getStrapiURL(picture.data.attributes.url);
+  const imageUrl = getStrapiMedia(picture.data.attributes.url);
   return (
     <div className="flex flex-col items-center mx-12 lg:mx-0">
       <div className="flex items-center">
