@@ -7,11 +7,7 @@ import { i18n } from "../../../i18n-config";
 import Banner from "./components/Banner";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
-
-const FALLBACK_SEO = {
-  title: "Strapi Starter Next Blog",
-  description: "Strapi Starter Next Blog",
-}
+import {FALLBACK_SEO} from "@/app/[lang]/utils/constants";
 
 
 async function getGlobal(): Promise<any> {
@@ -36,9 +32,7 @@ async function getGlobal(): Promise<any> {
       "footer.categories",
     ],
   };
-
-  const response = await fetchAPI(path, urlParamsObject, options);
-  return response;
+  return await fetchAPI(path, urlParamsObject, options);
 }
 
 export async function generateMetadata(): Promise<Metadata> {
