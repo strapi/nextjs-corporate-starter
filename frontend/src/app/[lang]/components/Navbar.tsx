@@ -2,6 +2,7 @@
 import Logo from "./Logo";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState } from 'react';
 
 interface NavLink {
   id: number;
@@ -11,15 +12,24 @@ interface NavLink {
 }
 
 function NavLink({ url, text }: NavLink) {
-  const path = usePathname();
-
+  const path = usePathname().replace(/^\/\w+/, '');
+  const isActive = path === url;
+  if (isActive) {
+    return (
+      <li className="flex">
+        <span
+          className={`flex items-center mx-4 -mb-1 border-b-2 dark:border-transparent dark:text-teal-400 dark:border-teal-400`}
+        >
+          {text}
+        </span>
+      </li>
+    );
+  }        
   return (
     <li className="flex">
       <Link
         href={url}
-        className={`flex items-center mx-4 -mb-1 border-b-2 dark:border-transparent ${
-          path === url && "dark:text-violet-400 dark:border-violet-400"
-        }}`}
+        className={`flex items-center mx-4 -mb-1 dark:border-transparent`}
       >
         {text}
       </Link>
@@ -36,6 +46,11 @@ export default function Navbar({
   logoUrl: string | null;
   logoText: string | null;
 }) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
   return (
     <div className="p-4 dark:bg-black dark:text-gray-100">
       <div className="container flex justify-between h-16 mx-auto px-0 sm:px-6">
@@ -50,8 +65,8 @@ export default function Navbar({
             ))}
           </ul>
         </div>
-
-        <button className="p-4 lg:hidden">
+      <div className="relative lg:hidden">      
+        <button className="p-4"  onClick={toggleMenu}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -67,6 +82,14 @@ export default function Navbar({
             ></path>
           </svg>
         </button>
+        {isMenuOpen && (
+          <ul className="absolute mt-2 py-2 w-30 bg-col rounded-md shadow-lg">
+            {links.map((item: NavLink) => (
+              <NavLink key={item.id} {...item} />
+            ))}
+          </ul>
+        )}        
+      </div>
       </div>
     </div>
   );
