@@ -6,6 +6,7 @@ interface EmailProps {
   title: string;
   description: string;
   emailPlaceholder: string;
+  message: string;
   submitButton: {
     text: string;
   };
@@ -20,7 +21,7 @@ export default function Email({ data }: { data: EmailProps }) {
           <h1 className="text-5xl font-bold leading-none">{data.title}</h1>
           <p className="text-lg">{data.description}</p>
         </div>
-        <FormSubmit placeholder={data.emailPlaceholder} text={data.submitButton.text} />
+        <FormSubmit placeholder={data.emailPlaceholder} message={data.message} text={data.submitButton.text} />
       </div>
     </section>
   );
