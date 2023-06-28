@@ -5,6 +5,9 @@
  */
 
 const populate = {
+  seo: {
+    populate: "*"
+  },
   contentSections: {
     populate: {
       picture: {
@@ -38,12 +41,12 @@ const populate = {
   },
 };
 
-module.exports = (config, { strapi }) => {
+module.exports = (config, {strapi}) => {
   // Add your own logic here.
   return async (ctx, next) => {
     ctx.query = {
       populate,
-      filters: { slug: ctx.query.filters.slug },
+      filters: {slug: ctx.query.filters.slug},
       locale: ctx.query.locale,
     };
 
