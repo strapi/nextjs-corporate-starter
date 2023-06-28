@@ -9,6 +9,8 @@
     "description": ""
   },
   "options": {
+    "increments": true,
+    "timestamps": true,
     "draftAndPublish": true
   },
   "pluginOptions": {
@@ -25,15 +27,16 @@
         }
       }
     },
-    "seo": {
+    "metadata": {
       "type": "component",
       "repeatable": false,
+      "component": "meta.metadata",
+      "required": true,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      },
-      "component": "shared.seo"
+      }
     },
     "contentSections": {
       "type": "dynamiczone",
