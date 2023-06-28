@@ -36,6 +36,9 @@ const populate = {
       },
     },
   },
+  seo: {
+    fields: ["metaTitle", "metaDescription"],
+  }
 };
 
 module.exports = (config, { strapi }) => {
