@@ -4,12 +4,15 @@ import { getStrapiURL } from "../utils/api-helpers";
 
 export default function FormSubmit({
   placeholder,
+  message,
   text,
 }: {
   placeholder: string;
+  message: string;
   text: string;
 }) {
   const [email, setEmail] = useState("");
+  const [inputMessage, setInputMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const token = process.env.NEXT_PUBLIC_STRAPI_FORM_SUBMISSION_TOKEN;
@@ -33,7 +36,7 @@ export default function FormSubmit({
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
-      body: JSON.stringify({ data: { email } }),
+      body: JSON.stringify({ data: { email, message: inputMessage } }),
     });
 
     if (!res.ok) {
@@ -60,8 +63,15 @@ export default function FormSubmit({
                 placeholder={errorMessage || placeholder}
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
-                className={"w-3/5 p-3 rounded-l-lg sm:w-2/3 text-gray-700"}
+                className={"w-3/5 p-3 rounded-l-lg rounded-r-lg sm:w-2/3 text-gray-700"}
               />
+              <input
+                type="text"
+                placeholder={message}
+                value={inputMessage}
+                onChange={(e) => setInputMessage(e.target.value)}
+                className={"w-3/5 p-3 rounded-l-lg sm:w-2/3 text-gray-700"}
+              />     
               <button
                 type="button"
                 className="w-2/5 p-3 font-semibold rounded-r-lg sm:w-1/3 dark:bg-violet-400 dark:text-gray-900"

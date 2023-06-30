@@ -24,6 +24,9 @@
     },
     "description": {
       "type": "text"
+    },
+    "message": {
+      "type": "string"
     }
   }
 }
