@@ -2,12 +2,23 @@
 import Logo from "./Logo";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Dialog } from '@headlessui/react'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { useState } from "react";
 
 interface NavLink {
   id: number;
   url: string;
   newTab: boolean;
   text: string;
+}
+
+interface MobileNavLink {
+  id: number;
+  url: string;
+  newTab: boolean;
+  text: string;
+  closeMenu: () => void;
 }
 
 function NavLink({ url, text }: NavLink) {
@@ -27,6 +38,26 @@ function NavLink({ url, text }: NavLink) {
   );
 }
 
+function MobileNavLink({ url, text, closeMenu }: MobileNavLink ) {
+  const path = usePathname();
+  const handleClick = () => {
+    closeMenu();
+  }
+  return (
+    <a className="flex">
+      <Link
+        href={url}
+        onClick={handleClick}
+        className={`-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-100 hover:bg-gray-900 ${
+          path === url && "dark:text-violet-400 dark:border-violet-400"
+        }}`}
+      >
+        {text}
+      </Link>
+    </a>
+  );
+}
+
 export default function Navbar({
   links,
   logoUrl,
@@ -36,6 +67,10 @@ export default function Navbar({
   logoUrl: string | null;
   logoText: string | null;
 }) {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const closeMenu = () => {
+    setMobileMenuOpen(false)
+  }
   return (
     <div className="p-4 dark:bg-black dark:text-gray-100">
       <div className="container flex justify-between h-16 mx-auto px-0 sm:px-6">
@@ -51,21 +86,45 @@ export default function Navbar({
           </ul>
         </div>
 
-        <button className="p-4 lg:hidden">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            className="w-6 h-6 dark:text-gray-100"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            ></path>
-          </svg>
+        <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
+          <div className="fixed inset-0 z-50" />
+          <Dialog.Panel className="fixed inset-y-0 rtl:left-0 ltr:right-0 z-50 w-full overflow-y-auto dark:bg-black px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-100/10">
+            <div className="flex items-center justify-between">
+              <a href="#" className="-m-1.5 p-1.5">
+                <span className="sr-only">Your Company</span>
+                <img
+                  className="h-5 w-auto"
+                  src={logoUrl || "../../../../public/next.svg"}
+                  alt=""
+                />
+              </a>
+              <button
+                type="button"
+                className="-m-2.5 rounded-md p-2.5 text-gray-100"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <span className="sr-only">Close menu</span>
+                <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+              </button>
+            </div>
+            <div className="mt-6 flow-root">
+              <div className="-my-6 divide-y divide-gray-200/10">
+                <div className="space-y-2 py-6">
+                {links.map((item) => (
+                    <MobileNavLink
+                      key={item.id}
+                      closeMenu={closeMenu}
+                      {...item} />
+                  ))}
+                </div>
+              </div>
+            </div>
+          </Dialog.Panel>
+          </Dialog>
+        <button 
+        className="p-4 lg:hidden" 
+        onClick={() => setMobileMenuOpen(true)} >
+          <Bars3Icon className="h-7 w-7 text-gray-100" aria-hidden="true"/>
         </button>
       </div>
     </div>

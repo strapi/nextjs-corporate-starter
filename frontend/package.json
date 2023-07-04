@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@formatjs/intl-localematcher": "^0.2.32",
+    "@headlessui/react": "^1.7.15",
+    "@heroicons/react": "^2.0.18",
     "@types/negotiator": "^0.6.1",
     "@types/node": "18.14.6",
     "@types/qs": "^6.9.7",
