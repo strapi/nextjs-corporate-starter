@@ -160,7 +160,7 @@ You can find the setting inside the `package.json` file inside the root folder.
   }
 }
 ```
-
+Go to the root folder and install the package, `yarn install`
 You can start both apps by running `yarn dev`.
 
 ## Conclusion
