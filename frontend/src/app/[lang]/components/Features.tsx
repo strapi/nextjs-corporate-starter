@@ -38,7 +38,7 @@ function Feature({ title, description, showLink, newTab, url, text }: Feature) {
         <p>{description}</p>
       </div>
       {showLink && url && text && (
-        <div>
+        <div className="mt-auto">
           <Link
             href={url}
             target={newTab ? "_blank" : "_self"}

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 interface NavLink {
   id: number;
@@ -24,9 +24,8 @@ function NavLink({ url, text }: NavLink) {
     <li className="flex">
       <Link
         href={url}
-        className={`flex items-center mx-4 -mb-1 border-b-2 dark:border-transparent ${
-          path === url && "dark:text-violet-400 dark:border-violet-400"
-        }}`}
+        className={`flex items-center mx-4 -mb-1 border-b-2 dark:border-transparent ${path === url && "dark:text-violet-400 dark:border-violet-400"
+          }}`}
       >
         {text}
       </Link>
@@ -34,7 +33,7 @@ function NavLink({ url, text }: NavLink) {
   );
 }
 
-function MobileNavLink({ url, text, closeMenu }: MobileNavLink ) {
+function MobileNavLink({ url, text, closeMenu }: MobileNavLink) {
   const path = usePathname();
   const handleClick = () => {
     closeMenu();
@@ -44,9 +43,8 @@ function MobileNavLink({ url, text, closeMenu }: MobileNavLink ) {
       <Link
         href={url}
         onClick={handleClick}
-        className={`-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-100 hover:bg-gray-900 ${
-          path === url && "dark:text-violet-400 dark:border-violet-400"
-        }}`}
+        className={`-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-100 hover:bg-gray-900 ${path === url && "dark:text-violet-400 dark:border-violet-400"
+          }}`}
       >
         {text}
       </Link>
@@ -63,12 +61,27 @@ export default function Navbar({
   logoUrl: string | null;
   logoText: string | null;
 }) {
+  const navbar = useRef();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const closeMenu = () => {
     setMobileMenuOpen(false)
   }
+
+  const documentScroll = () => {
+    navbar.current.classList.toggle('py-2', window.scrollY > 0);
+    navbar.current.classList.toggle('shadow-sm', window.scrollY > 0);
+    navbar.current.classList.toggle('shadow-gray-200', window.scrollY > 0);
+  };
+
+  useEffect(() => {
+    document.addEventListener('scroll', documentScroll);
+  }, []);
+
   return (
-    <div className="p-4 dark:bg-black dark:text-gray-100">
+    <header
+      className="fixed z-50 top-0 left-0 w-full p-4 dark:bg-black dark:text-gray-100 transition-all"
+      ref={navbar}
+    >
       <div className="container flex justify-between h-16 mx-auto px-0 sm:px-6">
         <Logo src={logoUrl}>
           {logoText && <h2 className="text-2xl font-bold">{logoText}</h2>}
@@ -88,12 +101,12 @@ export default function Navbar({
             <div className="flex items-center justify-between">
               <a href="#" className="-m-1.5 p-1.5">
                 <span className="sr-only">Strapi</span>
-                {logoUrl && 
-                <img
-                  className="h-8 w-auto"
-                  src={logoUrl}
-                  alt=""
-                />
+                {logoUrl &&
+                  <img
+                    className="h-8 w-auto"
+                    src={logoUrl}
+                    alt=""
+                  />
                 }
               </a>
               <button
@@ -108,7 +121,7 @@ export default function Navbar({
             <div className="mt-6 flow-root">
               <div className="-my-6 divide-y divide-gray-200/10">
                 <div className="space-y-2 py-6">
-                {links.map((item) => (
+                  {links.map((item) => (
                     <MobileNavLink
                       key={item.id}
                       closeMenu={closeMenu}
@@ -118,13 +131,13 @@ export default function Navbar({
               </div>
             </div>
           </Dialog.Panel>
-          </Dialog>
-        <button 
-        className="p-4 lg:hidden" 
-        onClick={() => setMobileMenuOpen(true)} >
-          <Bars3Icon className="h-7 w-7 text-gray-100" aria-hidden="true"/>
+        </Dialog>
+        <button
+          className="p-4 lg:hidden"
+          onClick={() => setMobileMenuOpen(true)} >
+          <Bars3Icon className="h-7 w-7 text-gray-100" aria-hidden="true" />
         </button>
       </div>
-    </div>
+    </header>
   );
 }
