@@ -42,7 +42,7 @@ export default function Pricing({ data }: PriceProps) {
               className="w-full p-4 mb-8  sm:mx-40 lg:mx-0 lg:w-1/3 lg:mb-0"
             >
               <div
-                className={`flex flex-col p-6 space-y-6 rounded shadow sm:p-8 min-h-[475px] min-w-[300px] ${
+                className={`flex flex-col p-6 space-y-6 rounded shadow sm:p-8 min-h-[475px] h-full min-w-[300px] ${
                   plan.isRecommended ? "dark:bg-violet-600" : "dark:bg-gray-800"
                 }`}
               >
