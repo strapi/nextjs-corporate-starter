@@ -7,14 +7,6 @@ note: This project was started with love by [Trecia](https://github.com/TreciaKS
 
 ## Hello Strapi 
 
-<p align="center">
-  <a href="https://strapi.io">
-    <img src="https://github.com/PaulBratslavsky/strapi/assets/6153188/3ac94f08-1149-40ef-a5df-6322909d31b5" alt="Administration panel" />
-  </a>
-</p>
-
-<br>
-
 Strapi Community Edition is a free and open-source headless CMS enabling you to manage any content, anywhere.
 
 - **Self-hosted or Cloud**: You can host and scale Strapi projects the way you want. You can save time by deploying to [Strapi Cloud](https://cloud.strapi.io/signups?source=github1) or deploy to the hosting platform you want**: AWS, Azure, Google Cloud, DigitalOcean.
