@@ -4,6 +4,9 @@ note: This project was started with love by [Trecia](https://github.com/TreciaKS
 
 ![demo-site](https://user-images.githubusercontent.com/6153188/231865321-0da5e81f-4832-4cce-bcd1-ecd79e9b9cc3.gif)
 
+
+## Hello Strapi 
+
 <p align="center">
   <a href="https://strapi.io">
     <img src="https://github.com/PaulBratslavsky/strapi/assets/6153188/3ac94f08-1149-40ef-a5df-6322909d31b5" alt="Administration panel" />
