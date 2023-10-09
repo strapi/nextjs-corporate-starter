@@ -60,7 +60,11 @@ In the root of our project we have our `seed-data.tar.gz` file. We will use it t
 2. Run the following command to seed your data:
 
 ```bash
-  yarn strapi import -- -f ../seed-data.tar.gz
+  yarn strapi import -f ../seed-data.tar.gz
+
+  OR
+
+  npm strapi import -- -f ../seed-data.tar.gz
 ```
 
 ![after-import](https://user-images.githubusercontent.com/6153188/231865491-05cb5818-a0d0-49ce-807e-a879f7e3070c.gif)
