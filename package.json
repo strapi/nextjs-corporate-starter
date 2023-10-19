@@ -7,9 +7,11 @@
     "setup:backend": "cd backend && yarn",
     "setup": "yarn install && yarn setup:frontend && yarn setup:backend",
     "dev": "yarn clear && concurrently \"cd frontend && yarn dev\" \"cd backend && yarn develop\"",
+    "seed": "cd backend && yarn strapi import -f ../seed-data.tar.gz",
+    "export": "cd backend && yarn strapi export --no-encrypt -f ../seed-data",
     "repo:upstream": "git fetch upstream && git merge upstream/main"
   },
   "dependencies": {
-    "concurrently": "^7.6.0"
+    "concurrently": "^8.2.2"
   }
 }
