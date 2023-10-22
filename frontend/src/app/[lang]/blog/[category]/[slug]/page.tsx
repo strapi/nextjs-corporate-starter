@@ -15,6 +15,7 @@ async function getPostBySlug(slug: string) {
                 populate: {
                     '__component': '*', 
                     'files': '*',
+                    'file': '*',
                     'url': '*',
                     'body': '*',
                     'title': '*',
