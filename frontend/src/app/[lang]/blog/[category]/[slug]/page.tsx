@@ -11,7 +11,17 @@ async function getPostBySlug(slug: string) {
             cover: { fields: ['url'] },
             authorsBio: { populate: '*' },
             category: { fields: ['name'] },
-            blocks: { populate: '*' },
+            blocks: { 
+                populate: {
+                    '__component': '*', 
+                    'files': '*',
+                    'file': '*',
+                    'url': '*',
+                    'body': '*',
+                    'title': '*',
+                    'author': '*',
+                }
+            },
         },
     };
     const options = { headers: { Authorization: `Bearer ${token}` } };
