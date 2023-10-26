@@ -1,5 +1,3 @@
-import React from "react";
-
 interface PageHeaderProps {
   heading: string,
   text?: string,

@@ -1,7 +1,3 @@
-// components/VideoEmbed.tsx
-
-import React from "react";
-
 interface VideoEmbedProps {
   id: number;
   url: string;

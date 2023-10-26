@@ -1,5 +1,3 @@
-import React from "react";
-
 import ArticleSelect from "@/app/[lang]/components/ArticleSelect";
 import { fetchAPI } from "@/app/[lang]/utils/fetch-api";
 
