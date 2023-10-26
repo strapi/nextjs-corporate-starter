@@ -3,7 +3,7 @@ import Link from "next/link";
 import { getStrapiMedia, formatDate } from "../utils/api-helpers";
 
 interface Article {
-  id: 4;
+  id: number;
   attributes: {
     title: string;
     description: string;
