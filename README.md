@@ -4,9 +4,34 @@ note: This project was started with love by [Trecia](https://github.com/TreciaKS
 
 ![demo-site](https://user-images.githubusercontent.com/6153188/231865321-0da5e81f-4832-4cce-bcd1-ecd79e9b9cc3.gif)
 
-If you prefer videos that guide you therought the setup process you can find them [here](https://github.com/strapi/nextjs-corporate-starter/issues/71)
+
+## Hello Strapi 
+
+Strapi Community Edition is a free and open-source headless CMS enabling you to manage any content, anywhere.
+
+- **Self-hosted or Cloud**: You can host and scale Strapi projects the way you want. You can save time by deploying to [Strapi Cloud](https://cloud.strapi.io/signups?source=github1) or deploy to the hosting platform you want**: AWS, Azure, Google Cloud, DigitalOcean.
+- **Modern Admin Pane**: Elegant, entirely customizable and a fully extensible admin panel.
+- **Multi-database support**: You can choose the database you prefer: PostgreSQL, MySQL, MariaDB, and SQLite.
+- **Customizable**: You can quickly build your logic by fully customizing APIs, routes, or plugins to fit your needs perfectly.
+- **Blazing Fast and Robust**: Built on top of Node.js and TypeScript, Strapi delivers reliable and solid performance.
+- **Front-end Agnostic**: Use any front-end framework (React, Next.js, Vue, Angular, etc.), mobile apps or even IoT.
+- **Secure by default**: Reusable policies, CORS, CSP, P3P, Xframe, XSS, and more.
+- **Powerful CLI**: Scaffold projects and APIs on the fly.
+
+## Features
+
+- **Content Types Builder**: Build the most flexible publishing experience for your content managers, by giving them the freedom to create any page on the go with [fields](https://docs.strapi.io/user-docs/content-manager/writing-content#filling-up-fields), components and [Dynamic Zones](https://docs.strapi.io/user-docs/content-manager/writing-content#dynamic-zones).
+- **Media Library**: Upload your images, videos, audio or documents to the media library. Easily find the right asset, edit and reuse it.
+- **Internationalization**: The Internationalization (i18n) plugin allows Strapi users to create, manage and distribute localized content in different languages, called "locales
+- **Role Based Access Control**: Create an unlimited number of custom roles and permissions for admin and end users.
+- **GraphQL or REST**: Consume the API using REST or GraphQL
+
+You can unlock additional features such as SSO, Audit Logs, Review Workflows in [Strapi Cloud](https://cloud.strapi.io/login?source=github1) or [Strapi Enterprise](https://strapi.io/enterprise?source=github1).
+
 
 ## Getting Started
+
+If you prefer videos that guide you therought the setup process you can find them [here](https://github.com/strapi/nextjs-corporate-starter/issues/71)
 
 1. Clone the repository locally:
 
