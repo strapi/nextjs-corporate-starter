@@ -5,7 +5,7 @@ note: This project was started with love by [Trecia](https://github.com/TreciaKS
 ![demo-site](https://user-images.githubusercontent.com/6153188/231865321-0da5e81f-4832-4cce-bcd1-ecd79e9b9cc3.gif)
 
 
-## Hello Strapi 
+## Hello Strapi
 
 Strapi Community Edition is a free and open-source headless CMS enabling you to manage any content, anywhere.
 
@@ -31,7 +31,7 @@ You can unlock additional features such as SSO, Audit Logs, Review Workflows in 
 
 ## Getting Started
 
-If you prefer videos that guide you therought the setup process you can find them [here](https://github.com/strapi/nextjs-corporate-starter/issues/71)
+If you prefer videos that guide you through the setup process you can find them [here](https://github.com/strapi/nextjs-corporate-starter/issues/71)
 
 1. Clone the repository locally:
 
@@ -98,7 +98,7 @@ https://github.com/strapi/nextjs-corporate-starter/assets/6153188/80f00bf5-d17b-
 
 ## Setting Up The Frontend
 
-Next we need to switch to our `/frontend` directory and create our `.env` file and paste in the following. 
+Next we need to switch to our `/frontend` directory and create our `.env` file and paste in the following.
 
 ```bash
 NEXT_PUBLIC_STRAPI_API_TOKEN=your-api-token
@@ -325,7 +325,7 @@ yarn repo:upstream
 ## FAQ
 
 ### How do I add additional pages?
-Check out [this video](https://youtu.be/EoVrTNA3geM) where I will guide on how to do this. 
+Check out [this video](https://youtu.be/EoVrTNA3geM) where I will guide on how to do this.
 
 ### How do I update my Strapi version?
 Check out this [this issue comment](https://github.com/strapi/nextjs-corporate-starter/issues/17#issuecomment-1558149967)
