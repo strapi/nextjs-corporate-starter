@@ -1,0 +1,127 @@
+{
+  "kind": "collectionType",
+  "collectionName": "posts",
+  "info": {
+    "singularName": "post",
+    "pluralName": "posts",
+    "displayName": "Post",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Slug": {
+      "type": "uid",
+      "targetField": "Name"
+    },
+    "PostBody": {
+      "type": "customField",
+      "options": {
+        "preset": "toolbarBaloon"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "PostSummary": {
+      "type": "text"
+    },
+    "MainImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "ReadingTime": {
+      "type": "integer"
+    },
+    "EditorsChoice": {
+      "type": "boolean",
+      "default": false
+    },
+    "Category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::category.category"
+    },
+    "ChainTag": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::chain.chain"
+    },
+    "MainTag": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tag.tag"
+    },
+    "Tags": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::tag.tag"
+    },
+    "Biography": {
+      "type": "boolean",
+      "default": false
+    },
+    "AMADisclaimer": {
+      "type": "boolean",
+      "default": false
+    },
+    "SponsoredArticleDisclaimer": {
+      "type": "boolean",
+      "default": false
+    },
+    "PressReleaseDisclaimer": {
+      "type": "boolean",
+      "default": false
+    },
+    "OrganicPR": {
+      "type": "boolean",
+      "default": false
+    },
+    "GuestWriterDisclaimer": {
+      "type": "boolean",
+      "default": false
+    },
+    "GeneralDisclaimer": {
+      "type": "boolean",
+      "default": false
+    },
+    "CookieCutter": {
+      "type": "boolean",
+      "default": false
+    },
+    "PremiumContent": {
+      "type": "boolean",
+      "default": false
+    },
+    "DontShowAdBanners": {
+      "type": "boolean",
+      "default": false
+    },
+    "AnandPRs": {
+      "type": "boolean",
+      "default": false
+    },
+    "PublishDate": {
+      "type": "datetime"
+    },
+    "CmcID": {
+      "type": "string"
+    },
+    "Author": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::author.author",
+      "inversedBy": "Post"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    }
+  }
+}

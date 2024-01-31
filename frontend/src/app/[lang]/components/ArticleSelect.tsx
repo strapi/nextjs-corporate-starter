@@ -26,35 +26,34 @@ function selectedFilter(current: string, selected: string) {
 }
 
 export default function ArticleSelect({
-  categories,
+  oldcategories,
   articles,
   params,
 }: {
-  categories: Category[];
+  oldcategories: Category[];
   articles: Article[];
   params: {
     slug: string;
-    category: string;
+    categoryold: string;
   };
 }) {
-
   return (
     <div className="p-4 rounded-lg dark:bg-gray-900 min-h-[365px] relative">
       <h4 className="text-xl font-semibold">Browse By Category</h4>
 
       <div>
         <div className="flex flex-wrap py-6 space-x-2 dark:border-gray-400">
-          {categories.map((category: Category) => {
-            if (category.attributes.articles.data.length === 0) return null;
+          {oldcategories.map((categoryold: Category) => {
+            if (categoryold.attributes.articles.data.length === 0) return null;
             return (
               <Link
-                href={`/blog/${category.attributes.slug}`}
+                href={`/blog/${categoryold.attributes.slug}`}
                 className={selectedFilter(
-                  category.attributes.slug,
-                  params.category
+                  categoryold.attributes.slug,
+                  params.categoryold
                 )}
               >
-                #{category.attributes.name}
+                #{categoryold.attributes.name}
               </Link>
             );
           })}
@@ -71,7 +70,7 @@ export default function ArticleSelect({
                 <li>
                   <Link
                     rel="noopener noreferrer"
-                    href={`/blog/${params.category}/${article.attributes.slug}`}
+                    href={`/blog/${params.categoryold}/${article.attributes.slug}`}
                     className={`${
                       params.slug === article.attributes.slug &&
                       "text-violet-400"

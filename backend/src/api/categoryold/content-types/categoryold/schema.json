@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "oldcategories",
+  "info": {
+    "singularName": "categoryold",
+    "pluralName": "oldcategories",
+    "displayName": "Categoryold",
+    "description": "Organize your content into categories"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "description": {
+      "type": "text"
+    },
+    "articles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::article.article",
+      "mappedBy": "category"
+    }
+  }
+}

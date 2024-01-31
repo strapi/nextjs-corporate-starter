@@ -4,35 +4,44 @@
   "info": {
     "singularName": "author",
     "pluralName": "authors",
-    "displayName": "Author",
-    "description": "Create authors for your content"
+    "displayName": "Author"
   },
   "options": {
-    "draftAndPublish": false
+    "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "name": {
+    "Name": {
       "type": "string"
     },
-    "avatar": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
+    "Slug": {
+      "type": "uid",
+      "targetField": "Name"
+    },
+    "Picture": {
       "allowedTypes": [
-        "images",
-        "files",
-        "videos"
-      ]
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
     },
-    "email": {
+    "TwitterProfileLink": {
       "type": "string"
     },
-    "articles": {
+    "FacebookProfileLink": {
+      "type": "string"
+    },
+    "InstagramProfileLink": {
+      "type": "string"
+    },
+    "Bio": {
+      "type": "text"
+    },
+    "Post": {
       "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::article.article",
-      "mappedBy": "authorsBio"
+      "relation": "oneToOne",
+      "target": "api::post.post",
+      "mappedBy": "Author"
     }
   }
 }

@@ -26,7 +26,7 @@ interface Article {
         };
       };
     };
-    authorsBio: {
+    writersBio: {
       data: {
         attributes: {
           name: string;
@@ -58,16 +58,16 @@ export default function PostList({
             article.attributes.cover.data?.attributes.url
           );
 
-          const category = article.attributes.category.data?.attributes;
-          const authorsBio = article.attributes.authorsBio.data?.attributes;
+          const categoryold = article.attributes.category.data?.attributes;
+          const writersBio = article.attributes.writersBio.data?.attributes;
 
           const avatarUrl = getStrapiMedia(
-            authorsBio?.avatar.data.attributes.url
+            writersBio?.avatar.data.attributes.url
           );
 
           return (
             <Link
-              href={`/blog/${category?.slug}/${article.attributes.slug}`}
+              href={`/blog/${categoryold?.slug}/${article.attributes.slug}`}
               key={article.id}
               className="max-w-sm mx-auto group hover:no-underline focus:no-underline dark:bg-gray-900 lg:w-[300px] xl:min-w-[375px] rounded-2xl overflow-hidden shadow-lg"
             >
@@ -99,9 +99,9 @@ export default function PostList({
                   <span className="text-xs dark:text-gray-400">
                     {formatDate(article.attributes.publishedAt)}
                   </span>
-                  {authorsBio && (
+                  {writersBio && (
                     <span className="text-xs dark:text-gray-400">
-                      {authorsBio.name}
+                      {writersBio.name}
                     </span>
                   )}
                 </div>
