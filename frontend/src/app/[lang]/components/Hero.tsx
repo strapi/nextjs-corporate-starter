@@ -34,7 +34,8 @@ interface HeroProps {
 }
 
 export default function Hero({ data }: HeroProps) {
-  const imgUrl = getStrapiMedia(data.picture.data.attributes.url);
+  // console.log(data);
+  // const imgUrl = getStrapiMedia(data.picture.data.attributes.url);
 
   return (
     <section className="dark:bg-black dark:text-gray-100">
@@ -67,7 +68,7 @@ export default function Hero({ data }: HeroProps) {
           </div>
         </div>
         <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
-          <Image
+          {/* <Image
             src={imgUrl || ""}
             alt={
               data.picture.data.attributes.alternativeText || "none provided"
@@ -75,7 +76,7 @@ export default function Hero({ data }: HeroProps) {
             className="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128 "
             width={600}
             height={600}
-          />
+          /> */}
         </div>
       </div>
     </section>

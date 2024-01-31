@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * author service.
+ * author service
  */
 
 const { createCoreService } = require('@strapi/strapi').factories;

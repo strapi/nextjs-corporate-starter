@@ -3,7 +3,7 @@ import { getStrapiMedia } from "../utils/api-helpers";
 
 interface Testimonial {
   text: string;
-  authorName: string;
+  writerName: string;
   picture: {
     data: {
       id: string;
@@ -25,7 +25,7 @@ interface TestimonialsProps {
   };
 }
 
-function Testimonial({ text, authorName, picture }: Testimonial) {
+function Testimonial({ text, writerName, picture }: Testimonial) {
   const imageUrl = getStrapiMedia(picture.data.attributes.url);
   return (
     <div className="flex flex-col items-center mx-12 lg:mx-0">
@@ -62,7 +62,7 @@ function Testimonial({ text, authorName, picture }: Testimonial) {
         </svg>
       </div>
       <span className="w-12 h-1 my-2 rounded-lg dark:bg-violet-400"></span>
-      <p>{authorName}</p>
+      <p>{writerName}</p>
     </div>
   );
 }

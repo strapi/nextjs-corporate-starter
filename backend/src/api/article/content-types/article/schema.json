@@ -34,12 +34,6 @@
         "videos"
       ]
     },
-    "category": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::category.category",
-      "inversedBy": "articles"
-    },
     "blocks": {
       "type": "dynamiczone",
       "components": [
@@ -50,16 +44,22 @@
         "shared.video-embed"
       ]
     },
-    "authorsBio": {
+    "writersBio": {
       "type": "relation",
       "relation": "manyToOne",
-      "target": "api::author.author",
+      "target": "api::writer.writer",
       "inversedBy": "articles"
     },
     "seo": {
       "type": "component",
       "repeatable": false,
       "component": "shared.seo"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::categoryold.categoryold",
+      "inversedBy": "articles"
     }
   }
 }

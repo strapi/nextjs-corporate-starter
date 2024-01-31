@@ -12,20 +12,15 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "name": {
+    "Name": {
       "type": "string"
     },
-    "slug": {
+    "Slug": {
       "type": "uid",
-      "targetField": "name"
+      "targetField": "Name",
+      "required": true
     },
-    "articles": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::article.article",
-      "mappedBy": "category"
-    },
-    "description": {
+    "Description": {
       "type": "text"
     }
   }
