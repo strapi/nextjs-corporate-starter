@@ -22,7 +22,7 @@
     "PostBody": {
       "type": "customField",
       "options": {
-        "preset": "toolbarBaloon"
+        "preset": "toolbarBalloon"
       },
       "customField": "plugin::ckeditor5.CKEditor"
     },
@@ -33,7 +33,9 @@
       "type": "media",
       "multiple": false,
       "required": false,
-      "allowedTypes": ["images"]
+      "allowedTypes": [
+        "images"
+      ]
     },
     "ReadingTime": {
       "type": "integer"
