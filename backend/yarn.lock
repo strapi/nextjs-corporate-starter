@@ -2,7 +2,9 @@
 # yarn lockfile v1
 
 
+
 "@_sh/strapi-plugin-ckeditor@2.1.0":
+
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/@_sh/strapi-plugin-ckeditor/-/strapi-plugin-ckeditor-2.1.0.tgz#9c4f900b8cc72871154a39998404d54e7a16f491"
   integrity sha512-RpgNd676Ub27F52/lPb9VY43e+P4Q+sS3QvZ75kLSgIJ98q6WjoN++CxZ/v2Xi4ttr8VoyCywOaWQsPOtxlXEg==
