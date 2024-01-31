@@ -110,7 +110,7 @@
       "type": "datetime"
     },
     "CmcID": {
-      "type": "string"
+      "type": "text"
     },
     "Author": {
       "type": "relation",
