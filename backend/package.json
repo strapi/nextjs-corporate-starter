@@ -11,18 +11,13 @@
   },
   "dependencies": {
     "@_sh/strapi-plugin-ckeditor": "^2.0.4",
-    "@strapi/plugin-color-picker": "4.19.0",
-    "@strapi/plugin-i18n": "4.19.0",
+    "@strapi/plugin-color-picker": "4.12.5",
+    "@strapi/plugin-i18n": "4.12.5",
     "@strapi/plugin-seo": "^1.8.0",
-    "@strapi/plugin-users-permissions": "4.19.0",
-    "@strapi/strapi": "4.19.0",
+    "@strapi/plugin-users-permissions": "4.12.5",
+    "@strapi/strapi": "4.12.5",
     "better-sqlite3": "8.7.0",
-    "pg": "^8.11.3",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^5.2.0",
-    "strapi-plugin-import-export-entries": "^1.23.1",
-    "styled-components": "^5.2.1"
+    "strapi-plugin-import-export-entries": "^1.23.1"
   },
   "author": {
     "name": "A Strapi developer"
