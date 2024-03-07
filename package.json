@@ -12,6 +12,7 @@
     "repo:upstream": "git fetch upstream && git merge upstream/main"
   },
   "dependencies": {
-    "concurrently": "^8.2.2"
+    "concurrently": "^8.2.2",
+    "npm-check-updates": "^16.14.15"
   }
 }

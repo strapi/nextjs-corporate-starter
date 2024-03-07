@@ -25,15 +25,15 @@ interface TestimonialsProps {
   };
 }
 
-function Testimonial({ text, authorName, picture }: Testimonial) {
-  const imageUrl = getStrapiMedia(picture.data.attributes.url);
+function Testimonial({ text, authorName, picture }: Readonly<Testimonial>) {
+  const imageUrl = getStrapiMedia(picture.data?.attributes.url);
   return (
     <div className="flex flex-col items-center mx-12 lg:mx-0">
       <div className="flex items-center">
         <div className="my-6">
           <Image
-            src={imageUrl || ""}
-            alt={picture.data.attributes.alternativeText || "none provided"}
+            src={imageUrl ?? ""}
+            alt={picture.data?.attributes.alternativeText || "none provided"}
             className="inline-block h-32 w-32 rounded-full"
             width={200}
             height={200}
