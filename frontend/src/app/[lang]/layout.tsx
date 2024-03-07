@@ -57,8 +57,8 @@ export default async function RootLayout({
   children,
   params,
 }: {
-  children: React.ReactNode;
-  params: { lang: string };
+  readonly children: React.ReactNode;
+  readonly params: { lang: string };
 }) {
   const global = await getGlobal(params.lang);
   // TODO: CREATE A CUSTOM ERROR PAGE
@@ -67,11 +67,11 @@ export default async function RootLayout({
   const { notificationBanner, navbar, footer } = global.data.attributes;
 
   const navbarLogoUrl = getStrapiMedia(
-    navbar.navbarLogo.logoImg.data.attributes.url
+    navbar.navbarLogo.logoImg.data?.attributes.url
   );
 
   const footerLogoUrl = getStrapiMedia(
-    footer.footerLogo.logoImg.data.attributes.url
+    footer.footerLogo.logoImg.data?.attributes.url
   );
 
   return (
