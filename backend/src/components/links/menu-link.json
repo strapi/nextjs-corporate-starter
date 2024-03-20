@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_links_menu_links",
+  "info": {
+    "displayName": "menuLink",
+    "icon": "exit",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string",
+      "required": true
+    },
+    "url": {
+      "type": "string"
+    },
+    "links": {
+      "type": "component",
+      "repeatable": true,
+      "component": "links.link"
+    },
+    "newTab": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

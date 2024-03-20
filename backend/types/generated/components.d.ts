@@ -66,10 +66,23 @@ export interface ElementsLogos extends Schema.Component {
     name: 'logos';
     displayName: 'Logos';
     icon: 'apple-alt';
+    description: '';
   };
   attributes: {
+    logoText: Attribute.String;
+    logoImg: Attribute.Media;
+  };
+}
+
+export interface ElementsMenu extends Schema.Component {
+  collectionName: 'components_elements_menus';
+  info: {
+    displayName: 'menu';
+    icon: 'bulletList';
+  };
+  attributes: {
+    link: Attribute.Component<'links.link', true>;
     title: Attribute.String;
-    logo: Attribute.Media;
   };
 }
 
@@ -216,6 +229,21 @@ export interface LinksLink extends Schema.Component {
     url: Attribute.String & Attribute.Required;
     newTab: Attribute.Boolean & Attribute.DefaultTo<false>;
     text: Attribute.String & Attribute.Required;
+  };
+}
+
+export interface LinksMenuLink extends Schema.Component {
+  collectionName: 'components_links_menu_links';
+  info: {
+    displayName: 'menuLink';
+    icon: 'exit';
+    description: '';
+  };
+  attributes: {
+    text: Attribute.String & Attribute.Required;
+    url: Attribute.String;
+    links: Attribute.Component<'links.link', true>;
+    newTab: Attribute.Boolean & Attribute.DefaultTo<false>;
   };
 }
 
@@ -482,6 +510,7 @@ declare module '@strapi/types' {
       'elements.feature': ElementsFeature;
       'elements.footer-section': ElementsFooterSection;
       'elements.logos': ElementsLogos;
+      'elements.menu': ElementsMenu;
       'elements.notification-banner': ElementsNotificationBanner;
       'elements.plan': ElementsPlan;
       'elements.testimonial': ElementsTestimonial;
@@ -491,6 +520,7 @@ declare module '@strapi/types' {
       'links.button-link': LinksButtonLink;
       'links.button': LinksButton;
       'links.link': LinksLink;
+      'links.menu-link': LinksMenuLink;
       'links.social-link': LinksSocialLink;
       'meta.metadata': MetaMetadata;
       'sections.bottom-actions': SectionsBottomActions;

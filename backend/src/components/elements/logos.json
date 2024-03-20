@@ -3,20 +3,21 @@
   "info": {
     "name": "logos",
     "displayName": "Logos",
-    "icon": "apple-alt"
+    "icon": "apple-alt",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "title": {
+    "logoText": {
       "type": "string"
     },
-    "logo": {
-      "allowedTypes": [
-        "images"
-      ],
+    "logoImg": {
       "type": "media",
       "multiple": false,
-      "required": false
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }

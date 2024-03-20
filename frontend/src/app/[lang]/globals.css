@@ -3,9 +3,9 @@
 @tailwind utilities;
 @import "react-slideshow-image/dist/styles.css";
 
-body {
+/* body {
   @apply dark:bg-black
-}
+} */
 
 
 /******************************************* 

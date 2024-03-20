@@ -9,8 +9,6 @@
     "description": ""
   },
   "options": {
-    "increments": true,
-    "timestamps": true,
     "draftAndPublish": false
   },
   "pluginOptions": {
@@ -71,6 +69,11 @@
         }
       },
       "component": "layout.footer"
+    },
+    "navigationBar": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::navigation-bar.navigation-bar"
     }
   }
 }

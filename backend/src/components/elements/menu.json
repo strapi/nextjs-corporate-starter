@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_elements_menus",
+  "info": {
+    "displayName": "menu",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "link": {
+      "type": "component",
+      "repeatable": true,
+      "component": "links.link"
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}

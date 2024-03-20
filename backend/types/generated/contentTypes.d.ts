@@ -930,8 +930,6 @@ export interface ApiGlobalGlobal extends Schema.SingleType {
     description: '';
   };
   options: {
-    increments: true;
-    timestamps: true;
     draftAndPublish: false;
   };
   pluginOptions: {
@@ -971,6 +969,11 @@ export interface ApiGlobalGlobal extends Schema.SingleType {
           localized: true;
         };
       }>;
+    navigationBar: Attribute.Relation<
+      'api::global.global',
+      'oneToOne',
+      'api::navigation-bar.navigation-bar'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -1022,6 +1025,38 @@ export interface ApiLeadFormSubmissionLeadFormSubmission
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::lead-form-submission.lead-form-submission',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiNavigationBarNavigationBar extends Schema.CollectionType {
+  collectionName: 'navigation_bars';
+  info: {
+    singularName: 'navigation-bar';
+    pluralName: 'navigation-bars';
+    displayName: 'Navigation bar';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    menuLink: Attribute.Component<'links.menu-link', true>;
+    navigationBarLogo: Attribute.Component<'elements.logos'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::navigation-bar.navigation-bar',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::navigation-bar.navigation-bar',
       'oneToOne',
       'admin::user'
     > &
@@ -1167,6 +1202,7 @@ declare module '@strapi/types' {
       'api::category.category': ApiCategoryCategory;
       'api::global.global': ApiGlobalGlobal;
       'api::lead-form-submission.lead-form-submission': ApiLeadFormSubmissionLeadFormSubmission;
+      'api::navigation-bar.navigation-bar': ApiNavigationBarNavigationBar;
       'api::page.page': ApiPagePage;
       'api::product-feature.product-feature': ApiProductFeatureProductFeature;
     }

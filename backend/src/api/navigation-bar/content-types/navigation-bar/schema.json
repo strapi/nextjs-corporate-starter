@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "navigation_bars",
+  "info": {
+    "singularName": "navigation-bar",
+    "pluralName": "navigation-bars",
+    "displayName": "Navigation bar",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "menuLink": {
+      "type": "component",
+      "repeatable": true,
+      "component": "links.menu-link"
+    },
+    "navigationBarLogo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.logos"
+    }
+  }
+}
