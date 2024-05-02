@@ -68,7 +68,7 @@ export default function Profile() {
 
   return (
     <div>
-      <PageHeader heading="Our Blog" text="Checkout Something not Cool" />
+      <PageHeader heading="Our Blog" text="Checkout Something Cool" />
       <Blog data={data}>
         {meta!.pagination.start + meta!.pagination.limit <
           meta!.pagination.total && (
