@@ -1,5 +1,23 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface ElementsComponent extends Schema.Component {
+  collectionName: 'components_elements_components';
+  info: {
+    displayName: 'Component';
+    icon: 'underline';
+  };
+  attributes: {
+    numbers: Attribute.Float & Attribute.Unique;
+    Date: Attribute.DateTime;
+    Button: Attribute.Boolean;
+    users_permissions_users: Attribute.Relation<
+      'elements.component',
+      'oneToMany',
+      'plugin::users-permissions.user'
+    >;
+  };
+}
+
 export interface ElementsFeatureColumn extends Schema.Component {
   collectionName: 'components_slices_feature_columns';
   info: {
@@ -216,6 +234,22 @@ export interface LinksLink extends Schema.Component {
     url: Attribute.String & Attribute.Required;
     newTab: Attribute.Boolean & Attribute.DefaultTo<false>;
     text: Attribute.String & Attribute.Required;
+  };
+}
+
+export interface LinksLinksCcs extends Schema.Component {
+  collectionName: 'components_links_links_ccs';
+  info: {
+    displayName: 'Links_CCS';
+    icon: 'connector';
+    description: '';
+  };
+  attributes: {
+    admin_user: Attribute.Relation<
+      'links.links-ccs',
+      'oneToOne',
+      'admin::user'
+    >;
   };
 }
 
@@ -477,6 +511,7 @@ export interface SharedVideoEmbed extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'elements.component': ElementsComponent;
       'elements.feature-column': ElementsFeatureColumn;
       'elements.feature-row': ElementsFeatureRow;
       'elements.feature': ElementsFeature;
@@ -491,6 +526,7 @@ declare module '@strapi/types' {
       'links.button-link': LinksButtonLink;
       'links.button': LinksButton;
       'links.link': LinksLink;
+      'links.links-ccs': LinksLinksCcs;
       'links.social-link': LinksSocialLink;
       'meta.metadata': MetaMetadata;
       'sections.bottom-actions': SectionsBottomActions;

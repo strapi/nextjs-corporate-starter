@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_links_links_ccs",
+  "info": {
+    "displayName": "Links_CCS",
+    "icon": "connector",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "admin_user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "admin::user"
+    }
+  }
+}

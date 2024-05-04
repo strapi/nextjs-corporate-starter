@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_elements_components",
+  "info": {
+    "displayName": "Component",
+    "icon": "underline"
+  },
+  "options": {},
+  "attributes": {
+    "numbers": {
+      "type": "float",
+      "unique": true
+    },
+    "Date": {
+      "type": "datetime",
+      "unique": false
+    },
+    "Button": {
+      "type": "boolean"
+    },
+    "users_permissions_users": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "plugin::users-permissions.user"
+    }
+  }
+}
