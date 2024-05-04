@@ -932,11 +932,17 @@ export interface ApiDeviceDevice extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    Device: Attribute.String & Attribute.Private & Attribute.Unique;
     Number: Attribute.Integer & Attribute.Private & Attribute.Unique;
     json: Attribute.JSON & Attribute.Private;
     ccsURL: Attribute.UID & Attribute.Private;
     Button: Attribute.Boolean & Attribute.Private;
+    device: Attribute.String & Attribute.Unique;
+    admin_users: Attribute.Relation<
+      'api::device.device',
+      'oneToMany',
+      'admin::user'
+    >;
+    LinkingAPI: Attribute.Component<'links.link', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

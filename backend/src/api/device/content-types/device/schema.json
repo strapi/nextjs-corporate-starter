@@ -12,11 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Device": {
-      "type": "string",
-      "private": true,
-      "unique": true
-    },
     "Number": {
       "type": "integer",
       "unique": true,
@@ -33,6 +28,20 @@
     "Button": {
       "type": "boolean",
       "private": true
+    },
+    "device": {
+      "type": "string",
+      "unique": true
+    },
+    "admin_users": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "admin::user"
+    },
+    "LinkingAPI": {
+      "type": "component",
+      "repeatable": true,
+      "component": "links.link"
     }
   }
 }

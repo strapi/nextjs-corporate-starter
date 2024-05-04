@@ -237,16 +237,6 @@ export interface LinksLink extends Schema.Component {
   };
 }
 
-export interface LinksLinksCcs extends Schema.Component {
-  collectionName: 'components_links_links_ccs';
-  info: {
-    displayName: 'Links_CCS';
-    icon: 'connector';
-    description: '';
-  };
-  attributes: {};
-}
-
 export interface LinksSocialLink extends Schema.Component {
   collectionName: 'components_links_social_links';
   info: {
@@ -520,7 +510,6 @@ declare module '@strapi/types' {
       'links.button-link': LinksButtonLink;
       'links.button': LinksButton;
       'links.link': LinksLink;
-      'links.links-ccs': LinksLinksCcs;
       'links.social-link': LinksSocialLink;
       'meta.metadata': MetaMetadata;
       'sections.bottom-actions': SectionsBottomActions;
