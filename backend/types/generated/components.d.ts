@@ -244,13 +244,7 @@ export interface LinksLinksCcs extends Schema.Component {
     icon: 'connector';
     description: '';
   };
-  attributes: {
-    admin_user: Attribute.Relation<
-      'links.links-ccs',
-      'oneToOne',
-      'admin::user'
-    >;
-  };
+  attributes: {};
 }
 
 export interface LinksSocialLink extends Schema.Component {

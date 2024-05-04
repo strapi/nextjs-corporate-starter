@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "devices",
+  "info": {
+    "singularName": "device",
+    "pluralName": "devices",
+    "displayName": "Device",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Device": {
+      "type": "string",
+      "private": true,
+      "unique": true
+    },
+    "Number": {
+      "type": "integer",
+      "unique": true,
+      "private": true
+    },
+    "json": {
+      "type": "json",
+      "private": true
+    },
+    "ccsURL": {
+      "type": "uid",
+      "private": true
+    },
+    "Button": {
+      "type": "boolean",
+      "private": true
+    }
+  }
+}

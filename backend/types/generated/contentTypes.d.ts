@@ -920,78 +920,38 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   };
 }
 
-export interface ApiCodeComposerStudioCodeComposerStudio
-  extends Schema.CollectionType {
-  collectionName: 'code_composer_studios';
+export interface ApiDeviceDevice extends Schema.CollectionType {
+  collectionName: 'devices';
   info: {
-    singularName: 'code-composer-studio';
-    pluralName: 'code-composer-studios';
-    displayName: 'CodeComposerStudio';
+    singularName: 'device';
+    pluralName: 'devices';
+    displayName: 'Device';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
   attributes: {
-    GeneralSettings: Attribute.String &
-      Attribute.Unique &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    Blocks: Attribute.Blocks &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    CCS: Attribute.UID<
-      'api::code-composer-studio.code-composer-studio',
-      'GeneralSettings'
-    > &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    Field: Attribute.Component<'elements.component'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    Dynamic_Zone: Attribute.DynamicZone<['links.links-ccs']> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
+    Device: Attribute.String & Attribute.Private & Attribute.Unique;
+    Number: Attribute.Integer & Attribute.Private & Attribute.Unique;
+    json: Attribute.JSON & Attribute.Private;
+    ccsURL: Attribute.UID & Attribute.Private;
+    Button: Attribute.Boolean & Attribute.Private;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::code-composer-studio.code-composer-studio',
+      'api::device.device',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::code-composer-studio.code-composer-studio',
+      'api::device.device',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
-    localizations: Attribute.Relation<
-      'api::code-composer-studio.code-composer-studio',
-      'oneToMany',
-      'api::code-composer-studio.code-composer-studio'
-    >;
-    locale: Attribute.String;
   };
 }
 
@@ -1240,7 +1200,7 @@ declare module '@strapi/types' {
       'api::article.article': ApiArticleArticle;
       'api::author.author': ApiAuthorAuthor;
       'api::category.category': ApiCategoryCategory;
-      'api::code-composer-studio.code-composer-studio': ApiCodeComposerStudioCodeComposerStudio;
+      'api::device.device': ApiDeviceDevice;
       'api::global.global': ApiGlobalGlobal;
       'api::lead-form-submission.lead-form-submission': ApiLeadFormSubmissionLeadFormSubmission;
       'api::page.page': ApiPagePage;
