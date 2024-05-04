@@ -932,8 +932,8 @@ export interface ApiDeviceDevice extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    Number: Attribute.Integer & Attribute.Private & Attribute.Unique;
-    json: Attribute.JSON & Attribute.Private;
+    Number: Attribute.Integer & Attribute.Unique;
+    json: Attribute.JSON;
     ccsURL: Attribute.UID & Attribute.Private;
     Button: Attribute.Boolean & Attribute.Private;
     device: Attribute.String & Attribute.Unique;
