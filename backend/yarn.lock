@@ -1551,11 +1551,6 @@
     webpack-hot-middleware "2.26.0"
     yup "0.32.9"
 
-"@strapi/cloud-cli@4.24.1":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@strapi/cloud-cli/-/cloud-cli-0.1.0.tgz#2c08ed3c0e2217bd4701854f9e9756052612e024"
-  integrity sha512-mxtyzDssnVgcCG2TmF+PsCgRwL4XoN9IBwX+A0jAly6JodmQmBIxkt0jfAU4m86bRsb5Vs5oALIuiWylpGREJw==
-
 "@strapi/content-releases@4.24.1":
   version "4.24.1"
   resolved "https://registry.yarnpkg.com/@strapi/content-releases/-/content-releases-4.24.1.tgz#1a249a2d4b286648c7ebbcac2d613e6ff93ed896"
@@ -1732,6 +1727,16 @@
     lodash "4.17.21"
     qs "6.11.1"
     sift "16.0.1"
+
+"@strapi/plugin-cloud@4.24.1":
+  version "4.24.1"
+  resolved "https://registry.yarnpkg.com/@strapi/plugin-cloud/-/plugin-cloud-4.24.1.tgz#1323bd30bc0ede98bb8451f91e8af1208861a9be"
+  integrity sha512-8Pd0uytli6HAXiTKWVxsZCOZ1SwpBR1bg7MVT1XhO34Nct82waDj54/TL100clZt4u3ahQv7tsPQ38fisN6diA==
+  dependencies:
+    "@strapi/design-system" "1.18.0"
+    "@strapi/helper-plugin" "4.24.1"
+    "@strapi/icons" "1.18.0"
+    react-intl "6.4.1"
 
 "@strapi/plugin-content-manager@4.24.1":
   version "4.24.1"
@@ -2849,7 +2854,7 @@ bcryptjs@2.4.3:
   resolved "https://registry.npmjs.org/bcryptjs/-/bcryptjs-2.4.3.tgz"
   integrity sha512-V/Hy/X9Vt7f3BbPJEi8BdVFMByHi+jNXrYkW3huaybV/kQ0KJg0Y6PkEMbn+zeT+i+SiKZ/HMqJGIIt4LZDqNQ==
 
-better-sqlite3@9.0.1:
+better-sqlite3@6.1.0:
   version "9.6.0"
   resolved "https://registry.yarnpkg.com/better-sqlite3/-/better-sqlite3-9.6.0.tgz#b01e58ba7c48abcdc0383b8301206ee2ab81d271"
   integrity sha512-yR5HATnqeYNVnkaUTf4bOP2dJSnyhP4puJN/QPRyx4YkBEEUxib422n2XzPqDEHjQQqazoYoADdAm5vE15+dAQ==
