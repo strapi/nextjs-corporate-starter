@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_elements_notification_banners",
+  "info": {
+    "name": "NotificationBanner",
+    "displayName": "Notification banner",
+    "icon": "exclamation",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "alert",
+        "info",
+        "warning"
+      ],
+      "required": true
+    },
+    "heading": {
+      "type": "string",
+      "required": true
+    },
+    "text": {
+      "type": "text",
+      "required": true
+    },
+    "show": {
+      "type": "boolean",
+      "default": false
+    },
+    "link": {
+      "type": "component",
+      "repeatable": false,
+      "component": "links.link"
+    }
+  }
+}

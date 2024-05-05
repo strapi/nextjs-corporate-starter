@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_elements_plans",
+  "info": {
+    "name": "plan",
+    "displayName": "Pricing plan",
+    "icon": "search-dollar",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "isRecommended": {
+      "type": "boolean"
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "pricePeriod": {
+      "type": "string"
+    },
+    "product_features": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product-feature.product-feature"
+    }
+  }
+}

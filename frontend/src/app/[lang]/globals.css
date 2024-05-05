@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "react-slideshow-image/dist/styles.css";
+
+body {
+  @apply dark:bg-black
+}
+
+
+/******************************************* 
+  Rich Text Styles
+*******************************************/ 
+
+/* Headers */
+.rich-text h1 {
+  @apply text-4xl font-bold mb-4 text-violet-400;
+}
+
+.rich-text h2 {
+  @apply text-3xl font-bold mb-4 text-violet-400;
+}
+
+.rich-text h3 {
+  @apply text-2xl font-bold mb-4 text-violet-400;
+}
+
+.rich-text h4 {
+  @apply text-xl font-bold mb-4 text-violet-400;
+}
+
+.rich-text h5 {
+  @apply text-lg font-bold mb-4 text-violet-400;
+}
+
+.rich-text h6 {
+  @apply text-base font-bold mb-4 text-violet-200;
+}
+
+/* Horizontal rules */
+.rich-text hr {
+  @apply border-gray-300 my-8;
+}
+
+.rich-text a {
+  @apply text-violet-400 underline;
+}
+
+/* Typographic replacements */
+.rich-text p {
+  @apply mb-4;
+}
+
+/* Emphasis */
+.rich-text strong {
+  @apply font-bold;
+}
+
+.rich-text em {
+  @apply italic;
+}
+
+.rich-text del {
+  @apply line-through;
+}
+
+/* Blockquotes */
+.rich-text blockquote {
+  @apply border-l-4 border-gray-400 pl-4 py-2 mb-4;
+}
+
+/* Lists */
+.rich-text ul {
+  @apply list-disc pl-4 mb-4;
+}
+
+.rich-text ol {
+  @apply list-decimal pl-4 mb-4;
+}
+
+.rich-text li {
+  @apply mb-2;
+}
+
+.rich-text li > ul {
+  @apply list-disc pl-4 mb-2;
+}
+
+.rich-text li > ol {
+  @apply list-decimal pl-4 mb-2;
+}
+
+/* Code blocks */
+.rich-text pre {
+  @apply font-mono bg-gray-900 text-gray-100 rounded p-4  my-6;
+}
+
+.rich-text code {
+  @apply font-mono bg-gray-900 text-gray-100 rounded px-2 py-1;
+}
+
+/* Tables */
+.rich-text table {
+  @apply w-full border-collapse border-gray-300 my-6;
+}
+
+.rich-text th {
+  @apply bg-gray-900 text-left py-2 px-4 font-semibold border-b border-gray-300;
+}
+
+.rich-text td {
+  @apply py-2 px-4 border-b border-gray-300;
+}
+
+/* Images */
+.rich-text img {
+  @apply w-full object-cover rounded-xl my-6;
+}
+
+/* Custom containers */
+.rich-text .warning {
+  @apply bg-yellow-100 border-yellow-500 text-yellow-700 px-4 py-2 rounded-lg mb-4;
+}
+
+
+/******************************************* 
+  React Slideshow Styles
+*******************************************/   
+
+.react-slideshow-container [aria-label="Previous Slide"] {
+  margin-left: 1rem;
+}
+
+.react-slideshow-container [aria-label="Next Slide"] {
+  margin-right: 1rem;
+}

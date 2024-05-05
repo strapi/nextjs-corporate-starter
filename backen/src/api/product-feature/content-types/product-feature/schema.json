@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "product_features",
+  "info": {
+    "singularName": "product-feature",
+    "pluralName": "product-features",
+    "displayName": "Product Feature",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
