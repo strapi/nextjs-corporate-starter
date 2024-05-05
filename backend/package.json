@@ -16,7 +16,11 @@
     "@strapi/plugin-seo": "^1.9.8",
     "@strapi/plugin-users-permissions": "4.24.1",
     "@strapi/strapi": "4.24.1",
+<<<<<<< HEAD
     "better-sqlite3": "6.1.0",
+=======
+    "better-sqlite3": "7.4.6",
+>>>>>>> 5bf9a7de06d56606b19609da4891fa4944a709b8
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "5.3.4",
