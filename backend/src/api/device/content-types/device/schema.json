@@ -14,12 +14,10 @@
   "attributes": {
     "Number": {
       "type": "integer",
-      "unique": true,
-      "private": false
+      "unique": true
     },
     "json": {
-      "type": "json",
-      "private": false
+      "type": "json"
     },
     "ccsURL": {
       "type": "uid",
@@ -42,6 +40,12 @@
       "type": "component",
       "repeatable": true,
       "component": "links.link"
+    },
+    "users_permissions_users": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "device"
     }
   }
 }

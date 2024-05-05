@@ -724,6 +724,11 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'manyToOne',
       'plugin::users-permissions.role'
     >;
+    device: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'manyToOne',
+      'api::device.device'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -943,6 +948,11 @@ export interface ApiDeviceDevice extends Schema.CollectionType {
       'admin::user'
     >;
     LinkingAPI: Attribute.Component<'links.link', true>;
+    users_permissions_users: Attribute.Relation<
+      'api::device.device',
+      'oneToMany',
+      'plugin::users-permissions.user'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
