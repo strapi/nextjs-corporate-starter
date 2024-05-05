@@ -11,21 +11,12 @@
   },
   "devDependencies": {},
   "dependencies": {
-<<<<<<< HEAD
-    "@strapi/plugin-cloud": "4.24.1",
-    "@strapi/plugin-i18n": "4.24.1",
-    "@strapi/plugin-seo": "^1.9.8",
-    "@strapi/plugin-users-permissions": "4.24.1",
-    "@strapi/strapi": "4.24.1",
-    "better-sqlite3": "7.4.6",
-=======
     "@strapi/cloud-cli": "4.24.1",
     "@strapi/strapi": "4.24.1",
     "@strapi/plugin-users-permissions": "4.24.1",
     "@strapi/plugin-i18n": "4.24.1",
-    "better-sqlite3": "9.0.1",
+    "better-sqlite3": "7.4.6",
     "@strapi/plugin-seo": "^1.9.8",
->>>>>>> 8fd964a075112ba665c636ac4ef629f0e24599b4
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "5.3.4",
