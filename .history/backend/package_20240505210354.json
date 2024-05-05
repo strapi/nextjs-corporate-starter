@@ -1,0 +1,36 @@
+{
+  "name": "corporate-blog-template",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A Strapi application",
+  "scripts": {
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "@strapi/cloud-cli": "4.24.1",
+    "@strapi/strapi": "4.24.1",
+    "@strapi/plugin-users-permissions": "4.24.1",
+    "@strapi/plugin-i18n": "4.24.1",
+    "better-sqlite3": "9.6.0",
+    "@strapi/plugin-seo": "^1.9.8",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "6.23.0",
+    "styled-components": "^6.1.9"
+  },
+  "author": {
+    "name": "A Strapi developer"
+  },
+  "strapi": {
+    "uuid": "0f95dc7c-202b-4ab2-a874-3799d23b1640"
+  },
+  "engines": {
+    "node": ">=18.0.0 <=20.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+}

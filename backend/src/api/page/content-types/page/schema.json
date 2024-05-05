@@ -9,8 +9,6 @@
     "description": ""
   },
   "options": {
-    "increments": true,
-    "timestamps": true,
     "draftAndPublish": true
   },
   "pluginOptions": {
@@ -21,17 +19,6 @@
   "attributes": {
     "shortName": {
       "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-    "metadata": {
-      "type": "component",
-      "repeatable": false,
-      "component": "meta.metadata",
-      "required": true,
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -83,6 +70,16 @@
         }
       },
       "type": "string"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.seo"
     }
   }
 }
