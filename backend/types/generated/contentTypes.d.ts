@@ -871,6 +871,11 @@ export interface ApiAuthorAuthor extends Schema.CollectionType {
       'oneToMany',
       'api::article.article'
     >;
+    device: Attribute.Relation<
+      'api::author.author',
+      'manyToOne',
+      'api::device.device'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -939,20 +944,20 @@ export interface ApiDeviceDevice extends Schema.CollectionType {
   attributes: {
     Number: Attribute.Integer & Attribute.Unique;
     json: Attribute.JSON;
-    ccsURL: Attribute.UID & Attribute.Private;
     Button: Attribute.Boolean & Attribute.Private;
-    device: Attribute.String & Attribute.Unique;
-    admin_users: Attribute.Relation<
+    device: Attribute.String & Attribute.Private & Attribute.Unique;
+    authors: Attribute.Relation<
       'api::device.device',
       'oneToMany',
-      'admin::user'
+      'api::author.author'
     >;
-    LinkingAPI: Attribute.Component<'links.link', true>;
     users_permissions_users: Attribute.Relation<
       'api::device.device',
       'oneToMany',
       'plugin::users-permissions.user'
     >;
+    Date: Attribute.DateTime & Attribute.Unique;
+    Enable: Attribute.Enumeration<['true', 'false']>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

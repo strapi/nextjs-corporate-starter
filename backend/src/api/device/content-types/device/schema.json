@@ -19,33 +19,37 @@
     "json": {
       "type": "json"
     },
-    "ccsURL": {
-      "type": "uid",
-      "private": true
-    },
     "Button": {
       "type": "boolean",
       "private": true
     },
     "device": {
       "type": "string",
-      "unique": true
+      "unique": true,
+      "private": true
     },
-    "admin_users": {
+    "authors": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "admin::user"
-    },
-    "LinkingAPI": {
-      "type": "component",
-      "repeatable": true,
-      "component": "links.link"
+      "target": "api::author.author",
+      "mappedBy": "device"
     },
     "users_permissions_users": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "plugin::users-permissions.user",
       "mappedBy": "device"
+    },
+    "Date": {
+      "type": "datetime",
+      "unique": true
+    },
+    "Enable": {
+      "type": "enumeration",
+      "enum": [
+        "true",
+        "false"
+      ]
     }
   }
 }

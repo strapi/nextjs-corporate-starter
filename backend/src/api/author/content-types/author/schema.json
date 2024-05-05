@@ -33,6 +33,12 @@
       "relation": "oneToMany",
       "target": "api::article.article",
       "mappedBy": "authorsBio"
+    },
+    "device": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::device.device",
+      "inversedBy": "authors"
     }
   }
 }
