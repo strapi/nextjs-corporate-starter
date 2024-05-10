@@ -33,6 +33,12 @@
       "relation": "oneToMany",
       "target": "api::article.article",
       "mappedBy": "authorsBio"
+    },
+    "codecomposerstudio": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::codecomposerstudio.codecomposerstudio",
+      "inversedBy": "authors"
     }
   }
 }

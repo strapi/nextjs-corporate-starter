@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_shared_ccsinputs",
+  "info": {
+    "displayName": "ccsinput",
+    "icon": "arrowRight"
+  },
+  "options": {},
+  "attributes": {
+    "admin_user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "admin::user"
+    }
+  }
+}

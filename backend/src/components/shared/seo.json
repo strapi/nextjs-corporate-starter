@@ -23,6 +23,23 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "users_permissions_users": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "plugin::users-permissions.user"
+    },
+    "ccsinput": {
+      "displayName": "ccsinput",
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.ccsinput"
+    },
+    "seo": {
+      "displayName": "Links_CCS",
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.links-ccs"
     }
   }
 }

@@ -1,5 +1,16 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface DynamicCssDynamicCss extends Schema.Component {
+  collectionName: 'components_dynamic_css_dynamic_csses';
+  info: {
+    displayName: 'dynamic_css';
+    icon: 'connector';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Unique;
+  };
+}
+
 export interface ElementsFeatureColumn extends Schema.Component {
   collectionName: 'components_slices_feature_columns';
   info: {
@@ -398,6 +409,30 @@ export interface SectionsTestimonialsGroup extends Schema.Component {
   };
 }
 
+export interface SharedCcsinput extends Schema.Component {
+  collectionName: 'components_shared_ccsinputs';
+  info: {
+    displayName: 'ccsinput';
+    icon: 'arrowRight';
+  };
+  attributes: {
+    admin_user: Attribute.Relation<
+      'shared.ccsinput',
+      'oneToOne',
+      'admin::user'
+    >;
+  };
+}
+
+export interface SharedLinksCcs extends Schema.Component {
+  collectionName: 'components_shared_links_ccs';
+  info: {
+    displayName: 'Links_CCS';
+    icon: 'connector';
+  };
+  attributes: {};
+}
+
 export interface SharedMedia extends Schema.Component {
   collectionName: 'components_shared_media';
   info: {
@@ -448,6 +483,13 @@ export interface SharedSeo extends Schema.Component {
     metaTitle: Attribute.String & Attribute.Required;
     metaDescription: Attribute.Text & Attribute.Required;
     shareImage: Attribute.Media;
+    users_permissions_users: Attribute.Relation<
+      'shared.seo',
+      'oneToMany',
+      'plugin::users-permissions.user'
+    >;
+    ccsinput: Attribute.Component<'shared.ccsinput'>;
+    seo: Attribute.Component<'shared.links-ccs'>;
   };
 }
 
@@ -477,6 +519,7 @@ export interface SharedVideoEmbed extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'dynamic-css.dynamic-css': DynamicCssDynamicCss;
       'elements.feature-column': ElementsFeatureColumn;
       'elements.feature-row': ElementsFeatureRow;
       'elements.feature': ElementsFeature;
@@ -504,6 +547,8 @@ declare module '@strapi/types' {
       'sections.pricing': SectionsPricing;
       'sections.rich-text': SectionsRichText;
       'sections.testimonials-group': SectionsTestimonialsGroup;
+      'shared.ccsinput': SharedCcsinput;
+      'shared.links-ccs': SharedLinksCcs;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;

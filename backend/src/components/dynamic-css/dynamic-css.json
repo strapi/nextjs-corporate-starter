@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_dynamic_css_dynamic_csses",
+  "info": {
+    "displayName": "dynamic_css",
+    "icon": "connector"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "unique": true
+    }
+  }
+}

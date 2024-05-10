@@ -866,6 +866,11 @@ export interface ApiAuthorAuthor extends Schema.CollectionType {
       'oneToMany',
       'api::article.article'
     >;
+    codecomposerstudio: Attribute.Relation<
+      'api::author.author',
+      'manyToOne',
+      'api::codecomposerstudio.codecomposerstudio'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -903,6 +908,11 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
       'api::article.article'
     >;
     description: Attribute.Text;
+    codecomposerstudios: Attribute.Relation<
+      'api::category.category',
+      'manyToMany',
+      'api::codecomposerstudio.codecomposerstudio'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -920,6 +930,94 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   };
 }
 
+export interface ApiCodecomposerstudioCodecomposerstudio
+  extends Schema.CollectionType {
+  collectionName: 'codecomposerstudios';
+  info: {
+    singularName: 'codecomposerstudio';
+    pluralName: 'codecomposerstudios';
+    displayName: 'codecomposerstudio';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    ccsUrl: Attribute.UID &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'1'>;
+    Text: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Description: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    main: Attribute.Media &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    categories: Attribute.Relation<
+      'api::codecomposerstudio.codecomposerstudio',
+      'manyToMany',
+      'api::category.category'
+    >;
+    blocks: Attribute.DynamicZone<['dynamic-css.dynamic-css']> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    authors: Attribute.Relation<
+      'api::codecomposerstudio.codecomposerstudio',
+      'oneToMany',
+      'api::author.author'
+    >;
+    page: Attribute.Relation<
+      'api::codecomposerstudio.codecomposerstudio',
+      'oneToOne',
+      'api::page.page'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::codecomposerstudio.codecomposerstudio',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::codecomposerstudio.codecomposerstudio',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::codecomposerstudio.codecomposerstudio',
+      'oneToMany',
+      'api::codecomposerstudio.codecomposerstudio'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiGlobalGlobal extends Schema.SingleType {
   collectionName: 'globals';
   info: {
@@ -930,8 +1028,6 @@ export interface ApiGlobalGlobal extends Schema.SingleType {
     description: '';
   };
   options: {
-    increments: true;
-    timestamps: true;
     draftAndPublish: false;
   };
   pluginOptions: {
@@ -971,6 +1067,11 @@ export interface ApiGlobalGlobal extends Schema.SingleType {
           localized: true;
         };
       }>;
+    codecomposerstudios: Attribute.Relation<
+      'api::global.global',
+      'oneToMany',
+      'api::codecomposerstudio.codecomposerstudio'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -1165,6 +1266,7 @@ declare module '@strapi/types' {
       'api::article.article': ApiArticleArticle;
       'api::author.author': ApiAuthorAuthor;
       'api::category.category': ApiCategoryCategory;
+      'api::codecomposerstudio.codecomposerstudio': ApiCodecomposerstudioCodecomposerstudio;
       'api::global.global': ApiGlobalGlobal;
       'api::lead-form-submission.lead-form-submission': ApiLeadFormSubmissionLeadFormSubmission;
       'api::page.page': ApiPagePage;

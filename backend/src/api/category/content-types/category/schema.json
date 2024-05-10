@@ -27,6 +27,12 @@
     },
     "description": {
       "type": "text"
+    },
+    "codecomposerstudios": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::codecomposerstudio.codecomposerstudio",
+      "mappedBy": "categories"
     }
   }
 }
