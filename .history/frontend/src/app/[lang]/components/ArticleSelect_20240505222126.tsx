@@ -72,9 +72,10 @@ export default function ArticleSelect({
                   <Link
                     rel="noopener noreferrer"
                     href={`/blog/${params.category}/${article.attributes.slug}`}
-                    className={`${params.slug === article.attributes.slug &&
+                    className={`${
+                      params.slug === article.attributes.slug &&
                       "text-violet-400"
-                      }  hover:underline hover:text-violet-400 transition-colors duration-200`}
+                    }  hover:underline hover:text-violet-400 transition-colors duration-200`}
                   >
                     {article.attributes.title}
                   </Link>
