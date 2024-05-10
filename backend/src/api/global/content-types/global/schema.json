@@ -69,11 +69,6 @@
         }
       },
       "component": "layout.footer"
-    },
-    "codecomposerstudios": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::codecomposerstudio.codecomposerstudio"
     }
   }
 }

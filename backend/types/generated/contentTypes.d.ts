@@ -1067,11 +1067,6 @@ export interface ApiGlobalGlobal extends Schema.SingleType {
           localized: true;
         };
       }>;
-    codecomposerstudios: Attribute.Relation<
-      'api::global.global',
-      'oneToMany',
-      'api::codecomposerstudio.codecomposerstudio'
-    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
