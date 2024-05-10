@@ -47,7 +47,6 @@ export default function ArticleSelect({
           {categories.map((category: Category) => {
             if (category.attributes.articles.data.length === 0) return null;
             return (
-              // eslint-disable-next-line react/jsx-key
               <Link
                 href={`/blog/${category.attributes.slug}`}
                 className={selectedFilter(
@@ -69,7 +68,6 @@ export default function ArticleSelect({
           <ul className="ml-4 space-y-1 list-disc">
             {articles.map((article: Article) => {
               return (
-                // eslint-disable-next-line react/jsx-key
                 <li>
                   <Link
                     rel="noopener noreferrer"
