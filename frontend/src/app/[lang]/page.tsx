@@ -1,5 +1,5 @@
 import LangRedirect from './components/LangRedirect';
-import {sectionRenderer} from './utils/section-renderer';
+import componentResolver from './utils/component-resolver';
 import {getPageBySlug} from "@/app/[lang]/utils/get-page-by-slug";
 
 
@@ -15,7 +15,7 @@ export default async function RootRoute({params}: { params: { lang: string } }) 
       if (page.data.length === 0) return null
       const contentSections = page.data[0].attributes.contentSections
       return contentSections.map((section: any, index: number) =>
-        sectionRenderer(section, index)
+        componentResolver(section, index)
       )
     } catch (error: any) {
       window.alert('Missing or invalid credentials')

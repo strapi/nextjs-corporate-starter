@@ -3,3 +3,4 @@ readme-images
 .vscode
 .DS_Store
 **/.yarn
+frontend/next.config.js
