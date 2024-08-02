@@ -1,6 +1,6 @@
 import { formatDate, getStrapiMedia } from '@/app/[lang]/utils/api-helpers';
-import { postRenderer } from '@/app/[lang]/utils/post-renderer';
 import Image from 'next/image';
+import componentResolver from '../utils/component-resolver';
 
 interface Article {
     id: number;
@@ -74,7 +74,7 @@ export default function Post({ data }: { data: Article }) {
             <div className="dark:text-gray-100">
                 <p>{description}</p>
 
-                {data.attributes.blocks.map((section: any, index: number) => postRenderer(section, index))}
+                {data.attributes.blocks.map((section: any, index: number) => componentResolver(section, index))}
             </div>
         </article>
     );
