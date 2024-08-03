@@ -1,0 +1,27 @@
+{
+  "name": "todo",
+  "version": "0.0.0",
+  "description": "This is the description of the plugin.",
+  "strapi": {
+    "name": "todo",
+    "description": "Description of todo plugin",
+    "kind": "plugin"
+  },
+  "dependencies": {
+    "react-router-dom": "^6.0.0",
+    "styled-components": "^6.0.0"
+  },
+  "author": {
+    "name": "A Strapi developer"
+  },
+  "maintainers": [
+    {
+      "name": "A Strapi developer"
+    }
+  ],
+  "engines": {
+    "node": ">=12.x.x <=20.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+}

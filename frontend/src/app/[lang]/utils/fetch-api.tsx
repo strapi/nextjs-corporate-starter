@@ -1,34 +1,36 @@
+
 import qs from "qs";
 import { getStrapiURL } from "./api-helpers";
 
-export async function fetchAPI(
-  path: string,
-  urlParamsObject = {},
-  options = {}
-) {
+
+export async function fetchAPI(path: string, query: any, authToken?: string) {
+  const baseURL = getStrapiURL();
+  const url = new URL("/api" + path , baseURL);
+  url.search = qs.stringify(query);
+
+  const baseHeader = {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      "Strapi-Response-Format": "v4", // add this
+    }
+  }
+
+  const headerWithAuth = {
+    ...baseHeader,
+    headers: {
+      ...baseHeader.headers,
+      Authorization: `Bearer ${authToken}`,
+    },
+  };
+
   try {
-    // Merge default and user options
-    const mergedOptions = {
-      next: { revalidate: 60 },
-      headers: {
-        "Content-Type": "application/json",
-      },
-      ...options,
-    };
-
-    // Build request URL
-    const queryString = qs.stringify(urlParamsObject);
-    const requestUrl = `${getStrapiURL(
-      `/api${path}${queryString ? `?${queryString}` : ""}`
-    )}`;
-
-    // Trigger API call
-    const response = await fetch(requestUrl, mergedOptions);
+    const response = await fetch(url, authToken ? headerWithAuth : baseHeader);
     const data = await response.json();
+    if (!response.ok) throw new Error("Failed to fetch data");
     return data;
-    
   } catch (error) {
-    console.error(error);
-    throw new Error(`Please check if your server is running and you set all the required tokens.`);
+    console.error("Error fetching data:", error);
+    throw error; // or return null;
   }
 }

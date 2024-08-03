@@ -1,5 +1,8 @@
-module.exports = ({ env }) => ({
-  seo: {
+module.exports = {
+  // ...
+  'todo': {
     enabled: true,
+    resolve: './src/plugins/todo'
   },
-});
+  // ...
+}

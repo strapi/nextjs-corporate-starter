@@ -16,7 +16,6 @@ async function getGlobal(lang: string): Promise<any> {
   if (!token) throw new Error("The Strapi API Token environment variable is not set.");
 
   const path = `/global`;
-  const options = { headers: { Authorization: `Bearer ${token}` } };
 
   const urlParamsObject = {
     populate: [
@@ -33,7 +32,7 @@ async function getGlobal(lang: string): Promise<any> {
     ],
     locale: lang,
   };
-  return await fetchAPI(path, urlParamsObject, options);
+  return await fetchAPI(path, urlParamsObject, token);
 }
 
 export async function generateMetadata({ params } : { params: {lang: string}}): Promise<Metadata> {
