@@ -4,12 +4,11 @@ import { fetchAPI } from "@/app/[lang]/utils/fetch-api";
 async function fetchSideMenuData(filter: string) {
   try {
     const token = process.env.NEXT_PUBLIC_STRAPI_API_TOKEN;
-    const options = { headers: { Authorization: `Bearer ${token}` } };
 
     const categoriesResponse = await fetchAPI(
       "/categories",
       { populate: "*" },
-      options
+      token
     );
 
     const articlesResponse = await fetchAPI(
@@ -23,7 +22,7 @@ async function fetchSideMenuData(filter: string) {
             },
           }
         : {},
-      options
+      token
     );
 
     return {
@@ -91,13 +90,12 @@ export default async function LayoutRoute({
 export async function generateStaticParams() {
   const token = process.env.NEXT_PUBLIC_STRAPI_API_TOKEN;
   const path = `/articles`;
-  const options = { headers: { Authorization: `Bearer ${token}` } };
   const articleResponse = await fetchAPI(
     path,
     {
       populate: ["category"],
     },
-    options
+    token
   );
 
   return articleResponse.data.map(

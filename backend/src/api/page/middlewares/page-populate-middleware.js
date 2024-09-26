@@ -6,40 +6,53 @@
 
 const populate = {
   contentSections: {
-    populate: {
-      picture: {
-        fields: ["url", "alternativeText", "caption", "width", "height"],
+    on: {
+      "sections.hero": {
+        populate: "*",
       },
-      buttons: {
-        populate: true,
+      "sections.features": {
+        populate: "*",
       },
-      feature: {
+      "sections.bottom-actions": {
+        populate: "*",
+      },
+      "sections.feature-columns-group": {
+        populate: "*",
+      },
+      "sections.feature-rows-group": {
+        populate: "*",
+      },
+      "sections.testimonials-group": {
         populate: {
-          fields: ["title", "description", "showLink", "newTab", "url", "text"],
-          media: {
-            fields: ["url", "alternativeText", "caption", "width", "height"],
+          testimonials: {
+            populate: "*",
           },
         },
       },
-      testimonials: {
+      "sections.large-video": {
+        populate: "*",
+      },
+      "sections.rich-text": {
+        populate: "*",
+      },
+      "sections.pricing": {
         populate: {
-          picture: {
-            fields: ["url", "alternativeText", "caption", "width", "height"],
+          plans: {
+            populate: "*",
           },
         },
       },
-      plans: {
-        populate: ["product_features"],
+      "sections.lead-form": {
+        populate: "*",
       },
-      submitButton: {
-        populate: true,
+      "sections.heading": {
+        populate: "*",
       },
     },
   },
   seo: {
-    fields: ["metaTitle", "metaDescription"],
-    populate: { shareImage: true },
-  }
+    populate: "*"
+  },
 };
 
 module.exports = (config, { strapi }) => {
