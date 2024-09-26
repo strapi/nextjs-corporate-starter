@@ -42,7 +42,7 @@ Starting export...
 │ schemas                                 │    55 │      42.1 KB  │
 ├─────────────────────────────────────────┼───────┼───────────────┤
 │ -- component                            │    33 │ (    13.6 KB) │
-├─────────────────────────────────────────┼───────┼───────────────┤
+├──────────────────────────────���──────────┼───────┼───────────────┤
 │ -- contentType                          │    22 │ (    28.5 KB) │
 ├─────────────────────────────────────────┼───────┼───────────────┤
 │ entities                                │    62 │      52.6 KB  │
@@ -62,7 +62,7 @@ Starting export...
 │ -- plugin::i18n.locale                  │     1 │ (     158 B ) │
 ├─────────────────────────────────────────┼───────┼───────────────┤
 │ -- plugin::upload.file                  │    22 │ (    20.8 KB) │
-├─────────────────────────────────────────┼───────┼───────────────┤
+├─────────��───────────────────────────────┼───────┼───────────────┤
 │ -- plugin::users-permissions.permission │    16 │ (       3 KB) │
 ├─────────────────────────────────────────┼───────┼───────────────┤
 │ -- plugin::users-permissions.role       │     3 │ (     677 B ) │
@@ -365,51 +365,22 @@ We should get a successful response with the following data:
       "slug": "home",
       "heading": "Home Page",
       "description": "This is the home page",
-      "createdAt": "2023-03-08T14:13:57.041Z",
-      "updatedAt": "2024-09-25T16:22:15.255Z",
-      "publishedAt": "2024-09-25T16:22:15.278Z",
-      "locale": "en",
-      "documentId": "jp9xgszv0fiebxygaonae4jr",
       "contentSections": [
         {
           "__component": "sections.hero",
-          "id": 5,
           "title": "Strapi [Starter] with Next JS",
           "description": "This is build with [Strapi] and [Next] JS. A match made in heaven.",
           "picture": {
-            "id": 11,
-            "name": "undraw_woman_ffrd.svg",
-            "alternativeText": null,
-            "caption": null,
-            "width": 643,
-            "height": 700,
-            "formats": null,
-            "hash": "undraw_woman_ffrd_b3ac24fb06",
-            "ext": ".svg",
-            "mime": "image/svg+xml",
-            "size": 6.76,
-            "url": "/uploads/undraw_woman_ffrd_b3ac24fb06.svg",
-            "previewUrl": null,
-            "provider": "local",
-            "provider_metadata": null,
-            "createdAt": "2023-03-09T18:10:31.642Z",
-            "updatedAt": "2024-09-25T15:45:42.919Z",
-            "documentId": "lojbt8nq3a7lbs1ket3s4ye2",
-            "locale": null,
-            "publishedAt": null
+            "url": "/uploads/undraw_woman_ffrd_b3ac24fb06.svg"
           },
           "buttons": [
             {
-              "id": 6,
               "url": "https://discord.com/invite/strapi",
-              "newTab": true,
               "text": "Discord",
               "type": "secondary"
             },
             {
-              "id": 7,
               "url": "https://strapi.io/events",
-              "newTab": true,
               "text": "Events",
               "type": "primary"
             }
@@ -417,34 +388,24 @@ We should get a successful response with the following data:
         },
         {
           "__component": "sections.features",
-          "id": 3,
           "heading": "Features",
           "description": "Welcome to Strapi Starter",
           "feature": [
             {
-              "id": 7,
               "title": "Discover Next.js",
               "description": "The React Framework for Production: Explore the future of web development with Next.js, the cutting-edge React framework.",
-              "showLink": true,
-              "newTab": true,
               "url": "https://vercel.com/",
               "text": "Learn more"
             },
             {
-              "id": 8,
               "title": "Strapi",
               "description": "Unleash the power of Strapi, the leading open-source headless CMS that lets you create, manage, and distribute your content across multiple platforms.",
-              "showLink": true,
-              "newTab": true,
               "url": "https://strapi.io",
               "text": "Learn more"
             },
             {
-              "id": 9,
               "title": "Cloud",
               "description": "Simplify your content management experience with Strapi Cloud, the fully-managed hosting solution for your Strapi projects.",
-              "showLink": true,
-              "newTab": true,
               "url": "https://strapi.io/cloud",
               "text": "Learn more"
             }
@@ -452,352 +413,84 @@ We should get a successful response with the following data:
         },
         {
           "__component": "sections.pricing",
-          "id": 3,
           "title": "Our Plans",
           "plans": [
             {
-              "id": 7,
               "name": "Free",
               "description": "Features",
-              "isRecommended": false,
               "price": 0,
               "pricePeriod": "Monthly",
               "product_features": [
-                {
-                  "id": 1,
-                  "name": "Example Feature 1",
-                  "createdAt": "2023-03-10T15:45:14.988Z",
-                  "updatedAt": "2023-03-28T15:45:07.118Z",
-                  "publishedAt": "2023-03-10T15:45:16.468Z",
-                  "documentId": "ji45ovqy68cpuj9a8hgfb67v",
-                  "locale": null
-                },
-                {
-                  "id": 3,
-                  "name": "Example Feature 2",
-                  "createdAt": "2023-03-10T15:46:27.207Z",
-                  "updatedAt": "2023-03-28T15:45:18.540Z",
-                  "publishedAt": "2023-03-10T15:46:27.565Z",
-                  "documentId": "wxim98n316kfqy54zsmdazkp",
-                  "locale": null
-                },
-                {
-                  "id": 4,
-                  "name": "Example Feature 3",
-                  "createdAt": "2023-03-10T15:46:39.431Z",
-                  "updatedAt": "2023-03-28T15:45:28.608Z",
-                  "publishedAt": "2023-03-10T15:46:40.548Z",
-                  "documentId": "v6phofjnzfn0q2i9ham968mj",
-                  "locale": null
-                }
+                { "name": "Example Feature 1" },
+                { "name": "Example Feature 2" },
+                { "name": "Example Feature 3" }
               ]
             },
             {
-              "id": 8,
               "name": "Pro",
               "description": "Features",
-              "isRecommended": true,
               "price": 9.99,
               "pricePeriod": "monthly",
               "product_features": [
-                {
-                  "id": 1,
-                  "name": "Example Feature 1",
-                  "createdAt": "2023-03-10T15:45:14.988Z",
-                  "updatedAt": "2023-03-28T15:45:07.118Z",
-                  "publishedAt": "2023-03-10T15:45:16.468Z",
-                  "documentId": "ji45ovqy68cpuj9a8hgfb67v",
-                  "locale": null
-                },
-                {
-                  "id": 3,
-                  "name": "Example Feature 2",
-                  "createdAt": "2023-03-10T15:46:27.207Z",
-                  "updatedAt": "2023-03-28T15:45:18.540Z",
-                  "publishedAt": "2023-03-10T15:46:27.565Z",
-                  "documentId": "wxim98n316kfqy54zsmdazkp",
-                  "locale": null
-                },
-                {
-                  "id": 4,
-                  "name": "Example Feature 3",
-                  "createdAt": "2023-03-10T15:46:39.431Z",
-                  "updatedAt": "2023-03-28T15:45:28.608Z",
-                  "publishedAt": "2023-03-10T15:46:40.548Z",
-                  "documentId": "v6phofjnzfn0q2i9ham968mj",
-                  "locale": null
-                },
-                {
-                  "id": 2,
-                  "name": "Example Feature 4",
-                  "createdAt": "2023-03-10T15:45:47.489Z",
-                  "updatedAt": "2023-03-28T15:46:00.360Z",
-                  "publishedAt": "2023-03-10T15:46:10.561Z",
-                  "documentId": "jykjv5t5h5kqh2u649un53ss",
-                  "locale": null
-                }
+                { "name": "Example Feature 1" },
+                { "name": "Example Feature 2" },
+                { "name": "Example Feature 3" },
+                { "name": "Example Feature 4" }
               ]
             },
             {
-              "id": 9,
               "name": "Enterprise ",
               "description": "Features",
-              "isRecommended": false,
               "price": 19.99,
               "pricePeriod": "monthly",
               "product_features": [
-                {
-                  "id": 1,
-                  "name": "Example Feature 1",
-                  "createdAt": "2023-03-10T15:45:14.988Z",
-                  "updatedAt": "2023-03-28T15:45:07.118Z",
-                  "publishedAt": "2023-03-10T15:45:16.468Z",
-                  "documentId": "ji45ovqy68cpuj9a8hgfb67v",
-                  "locale": null
-                },
-                {
-                  "id": 3,
-                  "name": "Example Feature 2",
-                  "createdAt": "2023-03-10T15:46:27.207Z",
-                  "updatedAt": "2023-03-28T15:45:18.540Z",
-                  "publishedAt": "2023-03-10T15:46:27.565Z",
-                  "documentId": "wxim98n316kfqy54zsmdazkp",
-                  "locale": null
-                },
-                {
-                  "id": 4,
-                  "name": "Example Feature 3",
-                  "createdAt": "2023-03-10T15:46:39.431Z",
-                  "updatedAt": "2023-03-28T15:45:28.608Z",
-                  "publishedAt": "2023-03-10T15:46:40.548Z",
-                  "documentId": "v6phofjnzfn0q2i9ham968mj",
-                  "locale": null
-                },
-                {
-                  "id": 2,
-                  "name": "Example Feature 4",
-                  "createdAt": "2023-03-10T15:45:47.489Z",
-                  "updatedAt": "2023-03-28T15:46:00.360Z",
-                  "publishedAt": "2023-03-10T15:46:10.561Z",
-                  "documentId": "jykjv5t5h5kqh2u649un53ss",
-                  "locale": null
-                },
-                {
-                  "id": 5,
-                  "name": "Example Feature 5",
-                  "createdAt": "2023-03-28T15:45:55.243Z",
-                  "updatedAt": "2023-03-28T15:50:01.464Z",
-                  "publishedAt": "2023-03-28T15:50:01.464Z",
-                  "documentId": "vjmgoy0s7xvdgn1hlyk3wxhz",
-                  "locale": null
-                }
+                { "name": "Example Feature 1" },
+                { "name": "Example Feature 2" },
+                { "name": "Example Feature 3" },
+                { "name": "Example Feature 4" },
+                { "name": "Example Feature 5" }
               ]
             }
           ]
         },
         {
           "__component": "sections.testimonials-group",
-          "id": 3,
           "title": "Testimonials",
           "description": "Hello",
           "testimonials": [
             {
-              "id": 5,
               "text": "ed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
               "authorName": "Paul Brats",
               "picture": {
-                "id": 20,
-                "name": "paul-brats.jpg",
-                "alternativeText": null,
-                "caption": null,
-                "width": 200,
-                "height": 200,
-                "formats": {
-                  "thumbnail": {
-                    "name": "thumbnail_paul-brats.jpg",
-                    "hash": "thumbnail_paul_brats_012832af74",
-                    "ext": ".jpg",
-                    "mime": "image/jpeg",
-                    "path": null,
-                    "width": 156,
-                    "height": 156,
-                    "size": 2.56,
-                    "url": "/uploads/thumbnail_paul_brats_012832af74.jpg"
-                  }
-                },
-                "hash": "paul_brats_012832af74",
-                "ext": ".jpg",
-                "mime": "image/jpeg",
-                "size": 3.66,
-                "url": "/uploads/paul_brats_012832af74.jpg",
-                "previewUrl": null,
-                "provider": "local",
-                "provider_metadata": null,
-                "createdAt": "2023-03-28T19:11:03.636Z",
-                "updatedAt": "2024-09-25T15:45:45.087Z",
-                "documentId": "pc0wncap7g6411vuk9y7ke6q",
-                "locale": null,
-                "publishedAt": null
+                "url": "/uploads/paul_brats_012832af74.jpg"
               }
             },
             {
-              "id": 6,
               "text": "ed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
               "authorName": "Kit Kat",
               "picture": {
-                "id": 22,
-                "name": "kit-kat.png",
-                "alternativeText": null,
-                "caption": null,
-                "width": 2000,
-                "height": 2000,
-                "formats": {
-                  "thumbnail": {
-                    "name": "thumbnail_kit-kat.png",
-                    "hash": "thumbnail_kit_kat_96feba6636",
-                    "ext": ".png",
-                    "mime": "image/png",
-                    "path": null,
-                    "width": 156,
-                    "height": 156,
-                    "size": 67.8,
-                    "url": "/uploads/thumbnail_kit_kat_96feba6636.png"
-                  },
-                  "small": {
-                    "name": "small_kit-kat.png",
-                    "hash": "small_kit_kat_96feba6636",
-                    "ext": ".png",
-                    "mime": "image/png",
-                    "path": null,
-                    "width": 500,
-                    "height": 500,
-                    "size": 600.17,
-                    "url": "/uploads/small_kit_kat_96feba6636.png"
-                  },
-                  "medium": {
-                    "name": "medium_kit-kat.png",
-                    "hash": "medium_kit_kat_96feba6636",
-                    "ext": ".png",
-                    "mime": "image/png",
-                    "path": null,
-                    "width": 750,
-                    "height": 750,
-                    "size": 1284.78,
-                    "url": "/uploads/medium_kit_kat_96feba6636.png"
-                  },
-                  "large": {
-                    "name": "large_kit-kat.png",
-                    "hash": "large_kit_kat_96feba6636",
-                    "ext": ".png",
-                    "mime": "image/png",
-                    "path": null,
-                    "width": 1000,
-                    "height": 1000,
-                    "size": 2210.36,
-                    "url": "/uploads/large_kit_kat_96feba6636.png"
-                  }
-                },
-                "hash": "kit_kat_96feba6636",
-                "ext": ".png",
-                "mime": "image/png",
-                "size": 1565.85,
-                "url": "/uploads/kit_kat_96feba6636.png",
-                "previewUrl": null,
-                "provider": "local",
-                "provider_metadata": null,
-                "createdAt": "2024-05-31T16:19:28.746Z",
-                "updatedAt": "2024-09-25T15:45:45.803Z",
-                "documentId": "dx3tr3h6uhzu62it0wl4sskv",
-                "locale": null,
-                "publishedAt": null
+                "url": "/uploads/kit_kat_96feba6636.png"
               }
             }
           ]
         },
         {
           "__component": "sections.lead-form",
-          "id": 3,
           "title": "Join our community.",
           "emailPlaceholder": "Enter your email",
           "location": "main page",
           "description": "Doloribus consectetur quasi ipsa quo neque culpa blanditiis ducimus recusandae a veritatis optio cumque, in harum ad nam!",
           "submitButton": {
-            "id": 3,
             "text": "Submit",
             "type": "primary"
           }
         }
       ],
       "seo": {
-        "id": 19,
         "metaTitle": "Home Page",
         "metaDescription": "This is the home page",
         "shareImage": {
-          "id": 19,
-          "name": "ai-prompt.jpg",
-          "alternativeText": null,
-          "caption": null,
-          "width": 5192,
-          "height": 3466,
-          "formats": {
-            "thumbnail": {
-              "name": "thumbnail_ai-prompt.jpg",
-              "hash": "thumbnail_ai_prompt_e43fe026b1",
-              "ext": ".jpg",
-              "mime": "image/jpeg",
-              "path": null,
-              "width": 234,
-              "height": 156,
-              "size": 8.15,
-              "url": "/uploads/thumbnail_ai_prompt_e43fe026b1.jpg"
-            },
-            "small": {
-              "name": "small_ai-prompt.jpg",
-              "hash": "small_ai_prompt_e43fe026b1",
-              "ext": ".jpg",
-              "mime": "image/jpeg",
-              "path": null,
-              "width": 500,
-              "height": 334,
-              "size": 24.77,
-              "url": "/uploads/small_ai_prompt_e43fe026b1.jpg"
-            },
-            "medium": {
-              "name": "medium_ai-prompt.jpg",
-              "hash": "medium_ai_prompt_e43fe026b1",
-              "ext": ".jpg",
-              "mime": "image/jpeg",
-              "path": null,
-              "width": 750,
-              "height": 500,
-              "size": 47.18,
-              "url": "/uploads/medium_ai_prompt_e43fe026b1.jpg"
-            },
-            "large": {
-              "name": "large_ai-prompt.jpg",
-              "hash": "large_ai_prompt_e43fe026b1",
-              "ext": ".jpg",
-              "mime": "image/jpeg",
-              "path": null,
-              "width": 1000,
-              "height": 667,
-              "size": 73.64,
-              "url": "/uploads/large_ai_prompt_e43fe026b1.jpg"
-            }
-          },
-          "hash": "ai_prompt_e43fe026b1",
-          "ext": ".jpg",
-          "mime": "image/jpeg",
-          "size": 2395.35,
-          "url": "/uploads/ai_prompt_e43fe026b1.jpg",
-          "previewUrl": null,
-          "provider": "local",
-          "provider_metadata": null,
-          "createdAt": "2023-03-28T17:06:52.873Z",
-          "updatedAt": "2024-09-25T15:45:44.952Z",
-          "documentId": "uucl140hzuga3r5tmgiow2db",
-          "locale": null,
-          "publishedAt": null
+          "url": "/uploads/ai_prompt_e43fe026b1.jpg"
         }
       }
     }
@@ -915,6 +608,7 @@ The two changes we made are:
 1. We removed `metadata.sharedImage` since this was removed when we removed the Strapi SEO plugin earlier.
 
 2. We removed the `options` params since we are now setting it inside `fethAPI` directly.
+
 3. And finally we passed down our token to the `fetchAPI` function.
 
 Nice! With all these changes, we should be able to get our global data.
