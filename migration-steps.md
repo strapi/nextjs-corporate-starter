@@ -1,24 +1,24 @@
 # How To Migrate From Strapi V4 To V5
 
-In this guide, we will walk you through the steps of migrating our corporate starter website from Strapi V4 to V5.
+This guide will walk you through the steps of migrating our corporate starter website from Strapi V4 to V5.
 
 You can learn more about the Strapi v5 upgrade guide [here](https://docs.strapi.io/dev-docs/migration/v4-to-v5/step-by-step).
 
-To help us accomplish this, we will use our codemods update tool that will do majority of the heavy lifting for us.
+To help us accomplish this, we will use our codemods update tool, which will do the majority of the heavy lifting for us.
 
 But before we do that, we need to make sure we have the following:
 
 1. Prepare your project for migration by backing up your code and database.
 2. Update your current Strapi version to the latest v4 release.
-3. Remove any deprecated plugins that are not yet compatible with Strapi v5.
+3. Remove deprecated plugins not yet compatible with Strapi v5.
 
-In my local environment, I have a Strapi v4 project running using sqlite database.
+I have a Strapi v4 project running using SQLite database in my local environment.
 
-I will start by exporting my data via our DTS export tool so I have a backup of my data.
+I will start by exporting my data via our DTS export tool so I have a backup.
 
 You can also make a backup of your actual sqlite database file.
 
-If you are using a different database, you will need to make a backup of your database.
+You will need to back up your database if you are using a different database.
 
 In the strapi v4 root directory, I will run the following command to create my backup file:
 
@@ -88,17 +88,17 @@ Export process has been completed successfully!
 ✨  Done in 2.86s.
 ```
 
-Now that I have the backup of my data, I can go and remove any deprecated plugins that are not yet compatible with Strapi v5.
+Now that I have a backup of my data, I can remove any deprecated plugins that are not yet compatible with Strapi v5.
 
 In this case, I am using the following plugins:
 
 1. @strapi/plugin-seo
 
-I will go ahead and remove the plugin from the `package.json` file.
+I will remove the plugin from the `package.json` file.
 
 And the reference to the plugin in the `config/plugins.ts` file.
 
-Finally, in the `package.json` file, I will update all the references to `4.25.6` to the following `2.25.12`, which was the latest Strapi v4 version when I started this migration.
+Finally, in the `package.json` file, I will update all the references to `4.25.6` to the following `2.25.12`, the latest Strapi v4 version when I started this migration.
 
 My updated `package.json` file looks like this:
 
@@ -140,24 +140,24 @@ My updated `package.json` file looks like this:
 }
 ```
 
-Now I am going to remove the `yarn.lock` file and the `node_modules` directory.
+I will remove the `yarn.lock` file and the `node_modules` directory.
 
 ```bash
 rm -rf yarn.lock
 rm -rf node_modules
 ```
 
-And finally run `yarn` command to update our project to the latest Strapi v4 version.
+And finally, run the `yarn` command to update our project to the latest Strapi v4 version.
 
-Once your app is updated, run `yarn develop` to make sure everything is working correctly.
+Once your app is updated, run `yarn develop` to ensure everything works correctly.
 
-Once everything is working correctly, we can go ahead and focus on migrating our **backend\*** first.
+Once everything works correctly, we can first focus on migrating our **backend**.
 
 But before we do, make sure you commit and save all your changes.
 
 ## Using Codemods To Update Strapi V4 To V5
 
-We will start the process by running the following command in the root of our Strapi project:
+We will start the process by running the following command at the root of our Strapi project:
 
 ```bash
   npx @strapi/upgrade major
@@ -196,7 +196,7 @@ Depending if you have any custom code, if the codemod is not able to update your
 
 In our case, it was pretty straightforward.
 
-Once the codemod is done, and all the new dependencies are installed, we can go ahead and start our project.
+Once the codemod is done and all the new dependencies are installed, we can start our project.
 
 ```bash
 yarn develop
@@ -206,19 +206,19 @@ You will see the following output in the console:
 
 ![Strapi v5 upgrade process](./images/001-starting-project.png)
 
-Now open your browser and navigate to `http://localhost:1337/admin` and login to your admin panel.
+Now open your browser, navigate to `http://localhost:1337/admin`, and log in to your admin panel.
 
 You can go to the **Settings** tab and confirm that you are running Strapi v5.
 
 ![Strapi v5 upgrade process](./images/002-dashboard.png)
 
-And finally, we can go ahead and take a look at our **Content Manager** page and click on the **Articles** type and see that our articles are still there.
+Finally, we can go ahead and take a look at our Content Manager page, click on the Articles type, and see that our articles are still there.
 
 ![Strapi v5 upgrade process](./images/003-content.png)
 
 Nice!
 
-Now before we go ahead and focus on migrating our **frontend**, I want to make sure that our **backend** is working correctly.
+Now, before we migrate our front end, I want to make sure that our back end is working correctly.
 
 Let's make a post request to get the data to our **Home Page** and see if we get the correct response.
 
@@ -243,11 +243,11 @@ page-populate-middleware.js: ctx.query =  {
 [2024-09-25 11:25:02.906] error: Invalid nested populate for page.contentSections (api::page.page). Expected a fragment ("on")
 ```
 
-In our project I am using a custom middleware to populate the data in the backend.
+In our project, I use a custom middleware to populate the data in the backend.
 
 And the query that we used is using Strapi v4 syntax.
 
-If we navigate to `src/page/middlewares/page-populate-middleware.js` file in our Strapi project, we can see that the query is using the following syntax:
+If we navigate to the `src/page/middlewares/page-populate-middleware.js` file in our Strapi project, we can see that the query is using the following syntax:
 
 ```js
 const populate = {
@@ -289,11 +289,11 @@ const populate = {
 };
 ```
 
-We need to update it to use the `on` flag to populate our dynamic zone fields.
+We must update it to use the `on` flag to populate our dynamic zone fields.
 
 You can learn more about this in our documentation [here](https://docs.strapi.io/dev-docs/api/document-service/populate#components--dynamic-zones).
 
-So let's go ahead and update the query to use Strapi v5 syntax with the following code:
+So, let's go ahead and update the query to use Strapi v5 syntax with the following code:
 
 ```js
 const populate = {
@@ -506,11 +506,11 @@ We should get a successful response with the following data:
 }
 ```
 
-Nice! Now that we have our data from our API, we can go ahead and start migrating our frontend.
+Nice! Now that we have data from our API, we can start migrating our front end.
 
 ## Updating Our Frontend To Work With Strapi V5
 
-So let's start by starting our frontend project and seeing what error we will get.
+So, let's start by starting our frontend project and seeing what error we will get.
 
 Navigate to your next.js project and run the following command to start your frontend:
 
@@ -518,11 +518,11 @@ Navigate to your next.js project and run the following command to start your fro
 yarn dev
 ```
 
-And you will probably see an error, a blank screen, or both.
+You will probably see an error, a blank screen, or both.
 
-This is a good reminder, when migrating, this is a good time to think of possible refactors.
+When migrating, this is a good reminder that it might be a good time to think of possible refactors.
 
-As we continue on this journey to migrate our frontend to strapi v5, we can start by updating our `utils/fetch-api.ts` file.
+As we continue migrating our front end to strapi v5, we can start by updating our `utils/fetch-api.ts` file.
 
 We will need to update the `fetchAPI` function to the following:
 
@@ -563,15 +563,15 @@ export async function fetchAPI(path: string, query: any, authToken?: string) {
 }
 ```
 
-Notice that we are using the `Strapi-Response-Format` header to tell Strapi to respond in `v4` format.
+Notice that we use the `Strapi-Response-Format` header to tell Strapi to respond in `v4` format.
 
-This will allow us to get the old data format. That we can use to test our frontend before we update it to the new format.
+This will allow us to get the old data format, which we can use to test our front end before we update it to the new format.
 
-Since we added some changes in this file, for instance, instead of using `options` we are now using `authToken`.
+Since we added some changes in this file, for instance, instead of using `options,` we are now using `authToken.`
 
-We will need to update this whereever we are using the `fetchAPI` function.
+We must update this wherever we use the `fetchAPI` function.
 
-Les's start in the our root `layout.tsx` file.
+Let's start with our root `layout.tsx` file.
 
 We will update the `getGlobal` function to the following:
 
@@ -603,19 +603,19 @@ async function getGlobal(lang: string): Promise<any> {
 }
 ```
 
-The two changes we made are:
+The few changes we made are:
 
-1. We removed `metadata.sharedImage` since this was removed when we removed the Strapi SEO plugin earlier.
+1. We removed `metadata.sharedImage` since we removed it when we removed the Strapi SEO plugin earlier.
 
-2. We removed the `options` params since we are now setting it inside `fethAPI` directly.
+2. We removed the `options` parameters since we are now setting it directly inside `fethAPI`.
 
-3. And finally we passed down our token to the `fetchAPI` function.
+3. Finally, we passed down our token to the `fetchAPI` function.
 
 Nice! With all these changes, we should be able to get our global data.
 
-Which should display out **Top Navigation** and **Footer** on our page.
+Which should display **Top Navigation** and **Footer** on our page.
 
-![Top Naviagation and Footer](./images/004-global-data.png)
+![Top Navigation and Footer](./images/004-global-data.png)
 
 Now let's navigate to our `utils/get-page-by-slug.ts` file and make the following changes:
 
@@ -632,22 +632,21 @@ export async function getPageBySlug(slug: string, lang: string) {
 
 We made the following changes:
 
-1. We removed the `options` params since we are now setting it inside `fethAPI` directly.
+1. We removed the `options` parameters since we now set them directly inside `fethAPI.`
 
-2. And finally we passed down our token to the `fetchAPI` function.
+2 We finally passed down our token to the `fetchAPI` function.
 
-Now let's refresh our page and see if we get our landing page data.
+Now, let's refresh our page and see if we get our landing page data.
 
 ![Page Data](./images/005-landing-page.png)
 
 Nice! It is working.
 
-Finally, we just need to update our **Blog Page** to reflect our new changes.
+Finally, we must update our **Blog Page** to reflect our new changes.
 
 Now, let's navigate to our `blog/page.tsx` file and make the following changes:
 
 On line 41, we will remove the `options` params and pass down our token to the `fetchAPI` function.
-
 Before:
 
 ```ts
@@ -682,7 +681,7 @@ After:
 const responseData = await fetchAPI(path, urlParamsObject, token);
 ```
 
-And we have to make a simmilar change in the `blog/[category]/[slug]/layout.tsx` file.
+We also need to make a similar change in the `blog/[category]/[slug]/layout.tsx` file.
 
 Inside the `fetchSideMenuData` function, on line 26, we will remove the `options` params and pass down our token to the `fetchAPI` function.
 
@@ -723,7 +722,7 @@ async function fetchSideMenuData(filter: string) {
 }
 ```
 
-And in the same file let's update the `generateStaticParams` function to the following:
+And in the same file, let's update the `generateStaticParams` function to the following:
 
 ```tsx
 export async function generateStaticParams() {
@@ -750,7 +749,7 @@ export async function generateStaticParams() {
 }
 ```
 
-And lastly we need to make a final change in the `blog/[category]/[slug]/page.tsx` file.
+Lastly, we need to make a final change in the `blog/[category]/[slug]/page.tsx` file.
 
 Here is what the `getPostBySlug` looks like now:
 
@@ -863,7 +862,7 @@ export async function generateStaticParams() {
 }
 ```
 
-Now oyu should be able to navigate to your blog page click on a single blog post and see the data.
+Now, you can navigate your blog page, click on a single blog post, and see the data.
 
 ![Blog Post](./images/007-blog-post.png)
 
@@ -871,24 +870,22 @@ Nice.
 
 ## Closing Thoughts
 
-In this tutorial we went through how to migrate a Strapi v4 project to Strapi v5 using the upgrade tool via codemods.
+In this tutorial, we discussed how to migrate a Strapi v4 project to Strapi v5 using the upgrade tool via codemods.
 
-We also went over how to update our frontend to work with Strapi v5. We took a look on how we can use the `Strapi-Response-Format` header to get the old Strapi v4 response format.
+We also went over how to update our frontend to work with Strapi v5 and how to use the `Strapi-Response-Format` header to get the old Strapi v4 response format.
 
-This allow us to quickly migrate our frontend to work with Strapi v5. With out having to rewrite all of our code.
+This allows us to quickly migrate our front end to work with Strapi v5 without having to rewrite all our code.
 
-But like with any migrations, this is a good time to do some refactoring and think what improvements you can make in the frontend.
+But, like with any migration, this is a good time to refactor and consider what improvements you can make in the front end.
 
-For this blog post, I will keep using the old Strapi v4 response format. But for the repo, I will update the frontend to work with the new Strapi v5 response format.
+I will keep using the old Strapi v4 response format for this blog post. However, I will update the repo's front end to work with the new Strapi v5 response format.
 
 ## Additional Resources
 
 add additional resources here
 
-## LaunchPad App 
+## LaunchPad App
 
-talk about launchpad app here
-
+talk about LaunchPad app here
 
 ## Conclusion
-
