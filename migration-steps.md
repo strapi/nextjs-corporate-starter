@@ -98,7 +98,7 @@ I will remove the plugin from the `package.json` file.
 
 And the reference to the plugin in the `config/plugins.ts` file.
 
-Finally, in the `package.json` file, I will update all the references to `4.25.6` to the following `2.25.12`, the latest Strapi v4 version when I started this migration.
+Finally, in the `package.json` file, I will update all the references to `4.25.6` to the following `4.25.12`, the latest Strapi v4 version when I started this migration.
 
 My updated `package.json` file looks like this:
 
