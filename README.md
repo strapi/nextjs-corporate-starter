@@ -1,4 +1,4 @@
-**IMOIRTANT NOTE:**
+**IMPORTANT NOTE:**
 
 Thank you to all the amazing people for your support—this project has been a blast! With the release of Strapi 5, @Mcastres has launched an even more awesome demo/starter project called LaunchPad.
 
