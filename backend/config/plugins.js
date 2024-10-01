@@ -1,5 +1,1 @@
-module.exports = ({ env }) => ({
-  seo: {
-    enabled: true,
-  },
-});
+module.exports = ({ env }) => ({});
